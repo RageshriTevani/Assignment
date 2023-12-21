@@ -527,13 +527,63 @@ table? With Example.
 15.How to insert a picture into a background image of a web page? With Example.
 
 <!--
+We can use the background attribute in the body tag to set an image as the background of the webpage. 
+
+We will need to specify the URL or the location of the image which we want to set to the background attribute of the body tag.
+
+Ex.:
+
+<body background = "URL or Path of Image">Body of the Webpage</body>
 
 
 -->
 
 
 16.How are active links different from normal links?
+<!--
+Websites are designed to point you to different resources.You can move from one website to another through links. Links help you to get information from different resources. Links are established in simple HTML web pages through <a> tag.
 
+Links are categorized into three types. Typically a Link is displayed in three different colors based on the usage.
+
+  1  Normal links (Unvisited links)
+  2  Active links
+  
+
+1. Normal Links:
+
+These are links that have not been interacted with by the user.
+
+They are typically styled with the default link appearance, often blue text with an underline.
+
+You can define the default styles for links using CSS.
+    Ex.:
+
+    <a href="https://www.example.com">Normal Link</a>
+
+
+2. Active Links:
+
+Active links refer to links that are currently being interacted with by the user.
+
+For example, when a user clicks on a link, the link enters the "active" state.
+
+You can style active links differently using the '':active' pseudo-class in CSS.
+
+    Ex.:
+
+    a:active {
+      color: red; /* Change text color to red when link is active (clicked) */
+    }
+
+Additionally, there is a "visited" state for links that have been clicked by the user. You can style visited links using the :visited pseudo-class.
+
+    Ex.:
+
+    a:visited {
+      color: purple; /* Change text color to purple for visited links */
+    }
+   
+-->
 
 17.What are the different tags to separate sections of text?
 
@@ -593,6 +643,52 @@ table? With Example.
 
 
 19.What is difference between HTML and XHTML?
+
+<!--
+
+HTML (Hypertext Markup Language) and XHTML (Extensible Hypertext Markup Language) are both markup languages used to structure content on the web. 
+
+While they share similarities, there are key differences in syntax and rules. It's important to note that XHTML is an XML-based reformulation of HTML, and it was designed to be more extensible and compatible with XML tools.
+
+Here are some of the main differences between HTML and XHTML:
+
+1.Syntax:
+
+HTML: HTML has a more lenient syntax, and it is forgiving of errors. It allows certain syntax shortcuts and does not require strict adherence to XML rules.
+
+XHTML: XHTML follows a stricter syntax based on XML rules. It requires well-formed documents with properly nested elements and attributes. Tags must be properly closed, and attribute values must be enclosed in quotes.
+
+2.Document Structure:
+
+HTML: In HTML, the document structure is generally more forgiving. Elements like <html>, <head>, and <body> are often implied and can be omitted without causing issues in most browsers.
+
+XHTML: In XHTML, documents must follow a more strictly defined structure. All documents must have a complete structure, including an explicit declaration, <html>, <head>, and <body> elements.
+
+3.Tag and Attribute Naming:
+
+HTML: HTML is case-insensitive when it comes to tag and attribute names. Both uppercase and lowercase letters are accepted.
+
+XHTML: XHTML is case-sensitive. Tag and attribute names must be written in lowercase.
+
+4.Self-Closing Tags:
+
+HTML: In HTML, certain tags like <br>, <img>, and <hr> can be self-closing (e.g., <br> or <br /> is acceptable).
+
+XHTML: In XHTML, self-closing tags must use the XML-style syntax with a space and a forward slash before the closing angle bracket (e.g., <br />).
+
+5.Error Handling:
+
+HTML: HTML is more forgiving of errors. Browsers often attempt to render the page even if there are syntax errors, and missing closing tags may not cause rendering issues.
+
+XHTML: XHTML is less forgiving. Even minor syntax errors can cause the browser to stop rendering the page. Developers need to ensure well-formed documents to avoid issues.
+
+6.Media Type:
+
+HTML: HTML documents are typically served with the media type text/html.
+XHTML: XHTML documents are served with the media type application/xhtml+xml. This stricter media type is required for proper processing of XHTML documents.
+
+
+-->
 
 
 20.What are logical and physical tags in HTML?
