@@ -1,0 +1,478 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    height: 700px;
+    background: rgb(243, 243, 243);
+    transform: transitionY(-50%);
+    border-bottom-left-radius: 550px;
+    border-bottom-right-radius: 550px;
+    border: 1px solid rgb(193, 193, 193);
+}
+
+/* navbar starts here */
+.navbar-brand{
+    margin-left: 250px;
+    font-weight: bolder;
+}
+.navbar-brand span{
+    color: blue;
+}
+.navbar ul li{
+    text-decoration: none;
+    list-style-type: none;
+    display: inline;
+    margin-right: 30px;
+}
+.nav-links a{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 30px;
+}
+.navbar .btns{
+    margin-right: 200px;
+}
+#login{
+    border: none;
+    background-color: rgb(237, 237, 237);
+    padding: 5px;
+    width: 70px;
+}
+#getstarted{
+    color: blue;
+    background-color: rgb(225, 224, 224);
+    border: none;
+    padding: 5px;
+    width: 150px;
+}
+
+/* main content starts from here */
+#btn2{
+    color: white;
+    background-color: rgb(143, 205, 50);
+    text-align: center;
+    margin-left: 600px;
+    margin-top: 50px;
+    font-size: 12px;
+    width: 95px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+}
+#btn3{
+    color: black;
+    background-color: rgb(248, 247, 247);
+    border: none;
+    border-radius: 20px;
+    font-size: 12px;
+    width: 195px;
+    height: 30px;
+}
+
+.content{
+    position: relative;
+}
+.content h1{
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bolder;
+}
+.content p{
+    margin-right: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.email{
+    margin-left: 550px;
+    margin-top: 20px;
+    width: 280px;
+    padding: 8px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+#btn4{
+    width: 150px;
+    padding: 8px;
+    background-color: blueviolet;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.graphsection{
+    margin-top: -250px;
+    z-index: 5 ;
+}
+#graphimg{
+    width: 750px;
+    height: auto;
+    margin-left: 380px;
+}
+.graphsection h6{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color: rgb(121, 121, 121);
+}
+.graphsection h6 span{
+    font-weight: bolder;
+    color: black;
+
+}
+
+#logo{
+    position: relative;
+    width: 70px;
+    height: auto;
+    margin-left: 80px;
+    padding: 10px;
+    display: inline;
+}
+
+/* box starts from here */
+#boxes{
+    width: 100%;
+    height: auto;
+    background: rgb(243, 243, 243);
+    position: relative !important;
+}
+.twoinfo{
+    margin-left: 30px;
+}
+.box{ 
+    width: 40%;
+    height: 750px;
+    margin-left: 100px;
+    margin-top: 50px;
+    background-color: white;
+    border: solid 1px rgb(224, 224, 224);
+}
+.box h4{
+    margin: 10px;
+    padding: 20px;
+}
+#vector1{
+    width: 40px;
+    height: auto;
+    margin: 10px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: rgb(255, 246, 232);
+    border-radius: 50%;
+}
+.detail{
+    margin: -10px;
+    margin-left: 80px;
+    margin-top: -50px;
+    padding: 5px;
+}
+.detail h5{
+    margin: 0px;
+    height: 40px;
+}
+.b1{
+    width: 350px;
+    border: 2px solid rgb(115, 115, 115);
+    margin: 10px;
+    margin-left: 90px;
+    padding: 10px;
+}
+.b1 span{
+    color: blue;
+}
+#vector2{
+    width: 40px;
+    height: auto;
+    margin: 10px;
+    margin-top: 60px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: rgb(255, 246, 232);
+    border-radius: 50%;
+}
+.detail2{
+    margin-left: 80px;
+    margin-top: -50px;
+    padding: 5px;
+}
+.detail2 h5{
+    margin: 0;
+    margin-top: 10px;
+    height: 40px;
+}
+
+
+.box2{
+    width: 30%;
+    height: 490px;
+    margin-top: 25%;
+    margin-bottom: 10%;
+    margin-left: -15%;
+    background-color: white;
+    border: solid 1px rgb(224, 224, 224);
+}
+.bx {
+    z-index: 10 !important;
+}
+#profile1{
+    width: 50px;
+    height: auto;
+    margin: 10px;
+    margin-left: 20px;
+    padding-top: 50px;
+}
+.b2{
+    width: 400px;
+    height: 150px;
+    border: 2px solid rgb(115, 115, 115);
+    margin-left: 30px;
+    padding: 20px;
+}
+.b2 span{
+    color: blue;
+}
+.detail3{
+    margin: -10px;
+    margin-left: 80px;
+    margin-top: -55px;
+    padding: 5px;
+}
+.detail3 h5{
+    margin-top: 10px;
+    height: 40px;
+}
+.detail3 p{
+    margin-top: -20px;
+    height: 40px;
+}
+.box2 #sendbtn{
+    margin-left: 77%;
+}
+
+/* 3rd section starts from here */
+.groupbox{
+    width: 350px;
+    height: 750px;
+    margin-left: 100px;
+}
+.groupbox .g1{
+    margin: 10px;
+    margin-top: 50px;
+    padding: 10px;
+}
+.groupbox h6{
+    width: 100%;
+    height: 30px;
+}
+.groupbox hr{
+    width: 280px;
+    margin-left: 20px;
+    color: rgb(121, 121, 121);
+}
+.firstgroup span{
+    background-color: rgb(63, 63, 193);
+}
+#sendbtn{
+    width: 80px;
+    color: white;
+    background-color: rgb(61, 80, 221);
+    margin: 10px;
+    margin-left: 260px;
+    margin-top: 20px;
+}
+
+/* make your work easier */
+.headline h2{
+    text-align: center;
+    margin: 10px;
+    margin-top: 40px;
+    padding: 10px;
+}
+.firstsection{
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    margin-left: 40px;
+    padding: 10px;
+}
+#group21{
+    width: 60px;
+    padding: 8px;
+}
+#group22{
+    width: 60px;
+    margin-top: 30px;
+    padding: 8px;
+}
+.firstsection h6{
+    padding: 10px;
+} 
+.firstsection p{
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+
+/* 2nd graph area */
+
+.grapharea{
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+    background-color: rgb(243, 243, 243);
+    background-size: cover;
+    border: 1px solid  rgb(225, 224, 224);
+    position: relative;
+}
+.textarea{
+    padding: 10px;
+}
+.grapharea h2{
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.grapharea p{
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+#purplebtn{
+    width: 150px;
+    color: white;
+    background-color:  rgb(63, 63, 193);
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    padding: 10px;
+}
+.grapharea #g2{
+    width: 75%;
+    margin-top: 50px;
+}
+
+
+/* customers section starts here*/
+.customers h2{
+    text-align: center;
+    margin-top: 80px;
+    padding: 7px;
+}
+.customers p{
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.reviews{
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+.reviews hr {
+    /* top: 20px; */
+    width: 80%;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+}
+.reviews h6{
+    text-align: left;
+    margin-left: 80px;
+    margin-top: -80px;
+    padding: 20px;
+}
+.reviews p{
+    text-align: left;
+    margin-left: 90px;
+    margin-top: -35px;
+}
+#profilepic{
+    width: auto;
+    height: auto;
+    margin-top: 45px;
+}
+#profile1{
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+/* purple box */
+.purplebox{
+    width: 75%;
+    height: auto;
+    padding: 60px;
+    margin: 20px;
+    margin-left: 180px;
+    background-color: rgb(75, 75, 174);
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+.purplebox h3{
+    margin: 10px;
+    padding: 10px;
+}
+.purplebox #click{
+    margin-left: 40px;
+    margin-top: 25px;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* footer */
+.endsection{
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    /* padding: 70px; */
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+.endsection ul li{
+    padding: 10px;
+}
+.endsection a{
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+.endsection .headline{
+    font-size: 25px;
+    font-weight: 700;
+}
+.endsection h5{
+    padding: 10px;
+}
+#f-img{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.rightsreserved p{
+    margin-top: 40px;
+    margin-left: 150px;
+}
+.socialmedia{
+    margin: 0;
+    margin-top: -35px;
+    margin-left: 1050px;
+}
+#icons{
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 20px;
+}
