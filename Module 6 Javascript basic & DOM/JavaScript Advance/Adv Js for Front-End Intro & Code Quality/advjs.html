@@ -1,0 +1,617 @@
+Write a program to Show an alert
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Alert Example</title>
+</head>
+<body>
+    <script>
+        alert("Hello, World!");
+    </script>
+</body>
+</html>
+
+
+● What will be the result for these expressions?
+1. 5 > 4
+2. "apple" > "pineapple"
+3. "2" > "12"
+4. undefined == null
+5. undefined === null
+6. null == "\n0\n"
+7. 7. null === +"\n0\n"
+<!-- 
+
+1.  5 > 4 → true
+This is a simple numerical comparison. 5 is indeed greater than 4, so the expression evaluates to true.
+
+2.  "apple" > "pineapple" → false
+This is a string comparison. In JavaScript, strings are compared lexicographically (i.e., alphabetically). "apple" comes before "pineapple" in the alphabet, so the expression evaluates to false.
+
+3.  "2" > "12" → true
+Another string comparison! Although 2 is less than 12 numerically, when compared as strings, "2" comes after "12" in the alphabet (because "2" starts with a "2" and "12" starts with a "1"). So, the expression evaluates to true.
+
+4.  undefined == null → true
+In JavaScript, undefined and null are both primitive values that represent the absence of any object value. Although they have different meanings, they are considered equal when using the == operator, which performs a loose equality check.
+
+5.  undefined === null → false
+However, when using the === operator, which performs a strict equality check, undefined and null are not considered equal. This is because they have different types (undefined is an undefined type, while null is a null type).
+
+6.  null == "\n0\n" → true
+This might seem surprising, but it's due to the way JavaScript performs type coercion. When comparing null to a string using the == operator, JavaScript converts the string to a primitive value using the ToPrimitive algorithm. In this case, the string "\n0\n" is converted to the number 0, and null is considered equal to 0 when using the == operator.
+
+7.  null === +"\n0\n" → false
+In this case, the + operator is used to convert the string "\n0\n" to a number using the ToNumber algorithm. The resulting value is 0. However, when using the === operator, which performs a strict equality check, null is not considered equal to 0, so the expression evaluates to false.
+-->
+
+
+● Will alert be shown?
+if ("0") { alert( 'Hello'); }
+<!-- 
+Yes, the alert will be shown.
+
+In JavaScript, the string "0" is considered a truthy value. This means that when used in a conditional statement, such as an if statement, it will evaluate to true.
+
+In this specific case, the code if ("0") { alert( 'Hello'); } will execute the code inside the if block because the condition "0" is truthy.
+
+Here's a breakdown of why this happens:
+
+In JavaScript, the following values are considered falsy:
+false
+0
+"" (empty string)
+null
+undefined
+NaN (Not a Number)
+All other values, including non-empty strings like "0", are considered truthy.
+So, in this case, the if statement evaluates the condition "0" as true, and the code inside the block is executed, showing the alert with the message "Hello".
+-->
+
+
+
+● What is the code below going to output? alert( null || 2 || undefined );
+<!-- 
+The code alert( null || 2 || undefined ); will output 2.
+
+Here's what's happening:
+
+The || operator is a logical OR operator. It evaluates the expressions from left to right and returns the first truthy value it encounters.
+
+null is a falsy value, so the expression null ||... will continue to evaluate the next expression.
+
+2 is a truthy value, so the expression null || 2 ||... will return 2 and stop evaluating the rest of the expression.
+undefined is not even evaluated because the || operator has already found a truthy value (2).
+
+So, the final result is 2, which is what will be alerted.
+
+Note that if the code were alert( null || undefined || 2 );, the output would still be 2, because the || operator would continue to evaluate the expressions until it finds a truthy value.
+
+-->
+
+
+
+● The following function returns true if the parameter age is greater than 18. Otherwise it asks for a confirmation and returns its result:
+function
+checkAge(age)
+{
+    if (age> 18) { return true; }
+    else {
+// ...return confirm ('did parents allow you?');
+    }
+}
+
+<script>
+
+function checkAge(age) {
+    if (age > 18) {
+        return true;
+    } else {
+        return confirm('Did parents allow you?');
+    }
+}
+</script>
+<!-- 
+The function takes a single parameter age.
+
+If age is greater than 18, the function returns true.
+
+Otherwise, the function calls the confirm method with the message "Did parents allow you?". The confirm method displays a dialog box with a message and two buttons: OK and Cancel. If the user clicks OK, the confirm method returns true; otherwise, it returns false.
+
+The function then returns the result of the confirm method.
+
+So, if the age is greater than 18, the function returns true. Otherwise, it asks the user for confirmation and returns the result of the confirmation.
+-->
+
+
+
+● Replace Function Expressions with arrow functions in the code below:
+Function
+ask(question, yes, no)
+{if (confirm(question))yes();
+    else
+
+    no();
+}
+ask("Do you agree?", function()
+{ alert("You agreed."); },
+function() {
+    alert("You canceled the execution."); 
+    }
+)
+
+<script>
+    const ask = (question, yes, no) => {
+        if (confirm(question)) yes();
+        else no();
+}
+
+ask("Do you agree?", 
+    () => alert("You agreed."), 
+    () => alert("You canceled the execution.")
+)
+</script>
+<!-- 
+The ask function is now defined using an arrow function expression, which is a more concise way to define a function.
+
+The two callback functions passed to ask are also defined using arrow functions. The syntax () => { ... } is equivalent to function() { ... }, but is more concise and expressive.
+-->
+
+
+
+
+                                        DATA TYPES AND OBJECTS
+
+
+● Write the code, one line for each action:
+a) Create an empty object user.
+b) Add the property name with the value John.
+c) Add the property surname with the value Smith.
+d) Change the value of the name to Pete.
+e) Remove the property name from the object.
+
+<script>
+// a) Create an empty object user.
+let user = {};
+
+// b) Add the property name with the value Raag.
+user.name = "Raag";
+
+// c) Add the property surname with the value Sharma.
+user.surname = "Sharma";
+
+// d) Change the value of the name to Rageshri.
+user.name = "Rageshri";
+
+// e) Remove the property name from the object.
+delete user.name;
+</script>
+
+
+
+● Is array copied?
+
+let fruits = ["Apples", "Pear", "Orange"]; // push a new value into the "copy" let
+shoppingCart = fruits; shoppingCart.push("Banana"); // what's in fruits?
+alert( fruits.length ); // ?
+
+//     In this code, shoppingCart is not a copy of fruits, but rather a reference to the same array.
+
+// Here's what happens:
+
+// let fruits = ["Apples", "Pear", "Orange"]; creates an array fruits with three elements.
+// let shoppingCart = fruits; assigns the value of fruits to shoppingCart. However, this does not create a copy of the array. Instead, both fruits and shoppingCart now reference the same array.
+// shoppingCart.push("Banana"); adds a new element to the array, which is now referenced by both fruits and shoppingCart.
+// alert( fruits.length ); will show 4, because the array has four elements now.
+// To create a copy of the array, you can use the spread operator (...) or the slice() method:
+
+
+<script>
+    let fruits = ["Apples", "Pear", "Orange"];
+let shoppingCart = [...fruits]; // or let shoppingCart = fruits.slice();
+shoppingCart.push("Banana");
+alert( fruits.length ); // 3
+</script>
+
+// In this case, shoppingCart is a new array that is a copy of fruits, and modifying shoppingCart does not affect fruits.
+
+
+
+
+● Map to names
+let john = { name: "John", age: 25 }; let pete = { name: "Pete", age: 30 }; let mary =
+{ name: "Mary", age: 28 }; let users = [ john, pete, mary ]; let names = /* ... your
+code */ alert( names ); // John, Pete, Mary
+<!-- You can use the map() method to extract the name property from each object in the users array and create a new array names with those values. 
+    
+<script>
+    let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+let users = [ john, pete, mary ];
+
+let names = users.map(user => user.name);
+
+alert( names ); // John, Pete, Mary
+</script>
+
+
+
+
+● Map to objects
+let john = { name: "John", surname: "Smith", id: 1 }; let pete = { name: "Pete",
+surname: "Hunt", id: 2 }; let mary = { name: "Mary", surname: "Key", id: 3 }; let
+users = [ john, pete, mary ]; let usersMapped = /* ... your code ... */
+/*
+usersMapped = [
+{ fullName: "John Smith", id: 1 },
+{ fullName: "Pete Hunt", id: 2 },
+{ fullName: "Mary Key", id: 3 }
+]
+*/ alert( usersMapped[0].id ) // 1 alert( usersMapped[0].fullName ) // John Smith
+<script>
+// let john = { name: "John", surname: "Smith", id: 1 };
+// let pete = { name: "Pete", surname: "Hunt", id: 2 };
+// let mary = { name: "Mary", surname: "Key", id: 3 };
+// let users = [ john, pete, mary ];
+
+// let usersMapped = users.map(user => ({
+//   fullName: `${user.name} ${user.surname}`,
+//   id: user.id
+// }));
+
+// alert(usersMapped[0].id); // 1
+// alert(usersMapped[0].fullName); // John Smith
+</script>
+
+
+
+● Sum the properties There is a salaries object with arbitrary number of salaries. Write
+the function sumSalaries(salaries) that returns the sum of all salaries using
+Object.values and the for..of loop.If salaries is empty, then the result must be 0.
+let salaries = {
+"John": 100,
+"Pete": 300,
+"Mary": 250
+};
+alert( sumSalaries(salaries) ); // 650
+
+<script>
+    function sumSalaries(salaries) {
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
+  }
+  return sum;
+}
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+alert(sumSalaries(salaries)); // 650
+</script>
+
+
+
+
+
+● Destructuring assignment We have an object: Write the Destructuring assignment that
+reads:
+// a) Name property into the variable name.
+// b) Year's property into the variable age.
+// c) isAdmin property into the variable isAdmin (false, if no such property)
+// d) let user = { name: "John", years: 30};
+
+<script>
+    let user = { name: "John", years: 30};
+
+let { name, years: age, isAdmin = false } = user;
+
+console.log(name); // John
+console.log(age); // 30
+console.log(isAdmin); // false
+</script>
+
+
+
+
+● Turn the object into JSON and back Turn the user into JSON and then read it back
+into another variable.
+user = { name: "John Smith", age: 35};
+
+<script>
+    let user = { name: "John Smith", age: 35 };
+
+// Convert the object to JSON
+let userJSON = JSON.stringify(user);
+console.log(userJSON); // Output: {"name":"John Smith","age":35}
+
+// Convert the JSON back to an object
+let newUser = JSON.parse(userJSON);
+console.log(newUser); // Output: { name: "John Smith", age: 35 }
+</script>
+
+
+
+
+
+
+                                ==> NEW REQUEST <==    
+
+
+
+● What is JSON?
+// JSON (JavaScript Object Notation) is a lightweight, text-based data interchange format that is easy to read and write. It is a standardized way to represent data in a format that is easily understandable by humans and machines.
+
+// JSON is often used to exchange data between web servers, web applications, and mobile apps, as well as to store data in files or databases
+
+// JSON is widely used in many areas, including:
+
+// Web development: JSON is often used to exchange data between web servers and web applications.
+// Mobile app development: JSON is used to store and exchange data in mobile apps.
+// APIs: JSON is often used as the data format for APIs (Application Programming Interfaces).
+// Data storage: JSON is used to store data in files or databases.
+// Configuration files: JSON is used to store configuration data in files.
+
+
+
+● What is promises?
+// Promises are a fundamental concept in JavaScript that allows you to handle asynchronous operations in a more manageable and efficient way. A promise is a result object that is used to handle asynchronous operations, providing a way to handle the outcome of an operation, whether it's successful or not.
+
+    getDataFromInternet()
+    .then((data) => {
+        console.log("Yes! I got the data:", data);
+    })
+    .catch((error) => {
+        console.error("No! I couldn't get the data:", error);
+    });
+
+
+
+
+
+● Write a program of promises and handle that promises also
+// Step 1: Create a promise
+let promise = new Promise((resolve, reject) => {
+  // Simulate a task that takes 2 seconds
+    setTimeout(() => {
+    // Resolve the promise with a value
+        resolve("Hello, World!");
+    }, 2000);
+});
+
+// Step 2: Handle the promise
+promise
+    .then((value) => {
+    console.log("Promise resolved:", value);
+    return value.toUpperCase();
+    })
+    .then((uppercaseValue) => {
+    console.log("Uppercase value:", uppercaseValue);
+    return uppercaseValue + "!";
+    })
+    .then((finalValue) => {
+    console.log("Final value:", finalValue);
+    })
+    .catch((error) => {
+    console.error("Promise rejected:", error);
+    });
+
+// Output:
+// Promise resolved: Hello, World!
+// Uppercase value: HELLO, WORLD!
+// Final value: HELLO, WORLD!!
+
+
+● Use fetch method for calling an api https://fakestoreapi.com/products
+fetch('https://fakestoreapi.com/products')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://fakestoreapi.com/products');
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+fetchData();
+
+
+
+
+● Display all the product from the api in your HTML page
+<!DOCTYPE html>
+<html>
+<head>
+<title>Products from API</title>
+<style>
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    li:last-child {
+        border-bottom: none;
+    }
+</style>
+</head>
+<body>
+<h1>Products from API</h1>
+<ul id="products-list"></ul>
+
+<script>
+    fetch('https://fakestoreapi.com/products')
+        .then(response => response.json())
+        .then(data => {
+        const productsList = document.getElementById('products-list');
+        data.forEach(product => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+            <h2>${product.title}</h2>
+            <p>Price: $${product.price}</p>
+            <p>Description: ${product.description}</p>
+            `;
+            productsList.appendChild(listItem);
+        });
+    })
+    .catch(error => console.error('Error:', error));
+</script>
+</body>
+</html>
+
+
+
+
+                                    ==> JAVASCRIPT ESSENTIALS ==>
+
+• What isJavaScript Output method?
+
+JavaScript has several output methods, which are used to display data or information to the user. Here are some of the most common JavaScript output methods:
+
+alert(): Displays a message or output in an alert dialog box.
+
+// alert("Hello World!");
+// console.log(): Writes a message or output to the browser's console. This is often used for debugging purposes.
+
+
+// console.log("Hello World!");
+// document.write(): Writes content to the current document. Note that this method can delete all existing HTML if used after the document is loaded.
+
+// document.write("Hello World!");
+// innerHTML: Sets the HTML content of an element. This method is used to insert output inside an HTML element.
+
+// <p id="output"></p>
+
+// <script>
+//     document.getElementById("output").innerHTML = "Hello World!";
+// </script>
+// textContent: Sets the text content of an element. This method is similar to innerHTML, but it only sets the text content, without parsing HTML.
+
+// <p id="output"></p>
+
+// <script>
+//     document.getElementById("output").textContent = "Hello World!";
+// </script>
+// prompt(): Displays a prompt dialog box that allows the user to input data.
+
+// let name = prompt("What is your name?");
+// confirm(): Displays a confirmation dialog box that allows the user to confirm or cancel an action.
+
+// let confirmDelete = confirm("Are you sure you want to delete this file?");
+// These are some of the most common JavaScript output methods. The choice of method depends on the specific use case and the type of output you want to display.
+
+
+
+• How to used JavaScript Output method?
+// 1. Alert Method
+
+// The alert() method is used to display a message or output in an alert dialog box.
+
+// Simple alert message
+<script>
+alert("Hello World!");
+
+// Alert with a variable
+let name = "John";
+alert("Hello " + name + "!");
+
+// Alert with a conditional statement
+let age = 25;
+if (age >= 18) {
+  alert("You are eligible to vote.");
+} else {
+  alert("You are not eligible to vote.");
+}
+
+</script>
+
+
+
+
+• How to used JavaScript Events to do all examples?
+
+// 1. Alert Method with a Button Click Event
+<button id="alert-btn">Click me!</button>
+
+<script>
+    let alertBtn = document.getElementById("alert-btn");
+    alertBtn.addEventListener("click", function() {
+        alert("Hello World!");
+    });
+</script>
+
+
+
+// 2. Console Log Method with a Button Click Event
+<button id="console-log-btn">Click me!</button>
+
+<script>
+    let consoleLogBtn = document.getElementById("console-log-btn");
+    consoleLogBtn.addEventListener("click", function() {
+        console.log("Hello World!");
+    });
+</script>
+
+
+
+// 3. Document Write Method with a Button Click Event
+<button id="document-write-btn">Click me!</button>
+
+<script>
+    let documentWriteBtn = document.getElementById("document-write-btn");
+    documentWriteBtn.addEventListener("click", function() {
+        document.write("Hello World!");
+    });
+</script>
+
+
+// 4. InnerHTML Method with a Button Click Event
+
+<p id="output"></p>
+<button id="inner-html-btn">Click me!</button>
+
+<script>
+    let innerHtmlBtn = document.getElementById("inner-html-btn");
+    innerHtmlBtn.addEventListener("click", function() {
+        document.getElementById("output").innerHTML = "Hello World!";
+    });
+</script>
+
+// 5. Prompt Method with a Button Click Event
+<button id="prompt-btn">Click me!</button>
+
+<script>
+    let promptBtn = document.getElementById("prompt-btn");
+    promptBtn.addEventListener("click", function() {
+        let name = prompt("What is your name?");
+        alert("Hello " + name + "!");
+    });
+</script>
+
+
+// 6. Confirm Method with a Button Click Event
+<button id="confirm-btn">Click me!</button>
+
+<script>
+    let confirmBtn = document.getElementById("confirm-btn");
+    confirmBtn.addEventListener("click", function() {
+        let confirmDelete = confirm("Are you sure you want to delete this file?");
+        if (confirmDelete) {
+            alert("File deleted successfully.");
+        } else {
+            alert("File deletion cancelled.");
+        }
+    });
+</script>

@@ -1,0 +1,386 @@
+Q.30 What are the looping structures in JavaScript? Any one Example?
+<!-- 1.For Loop:
+The for loop executes a block of code repeatedly based on an initialization, condition, and increment/decrement.  -->
+<script>
+    for (let i = 0; i < 5; i++) {
+    console.log("Hello World!");
+}
+
+// Example output:
+
+// Hello World!
+// Hello World!
+// Hello World!
+// Hello World!
+// Hello World!
+
+</script>
+
+
+<!-- While Loop:
+The while loop executes a block of code while a specified condition is true. -->
+<script>
+let val = 1;
+while (val < 6) {
+    console.log(val);
+    val += 1;
+}
+// Example output:
+1
+2
+3
+4
+5
+
+</script>
+<!--3. Do-While Loop:
+The do-while loop executes the code block at least once, even if the condition is false. -->
+<script>
+let x = 2;
+do {
+    console.log("Value of x: " + x);
+    x++;
+} while (x <= 4);
+// Example output:
+// Value of x: 2
+// Value of x: 3
+// Value of x: 4
+
+</script>
+
+
+
+
+Q.31 Write a print 972 to 897 using for loop in JS? 
+
+<script>
+for (let i = 972; i >= 897; i--) {
+    console.log(i);
+}
+
+</script>
+
+
+
+Q.32 Write to print factorial of given number? 
+S<script>
+    // Using a For Loop:
+
+// Program to find the factorial of a number
+
+const number = 5; // Replace with your desired number
+
+if (number < 0) {
+    console.log('Error! Factorial for negative number does not exist.');
+} else if (number === 0) {
+    console.log(`The factorial of ${number} is 1.`);
+} else {
+    let fact = 1;
+    for (let i = 1; i <= number; i++) {
+        fact *= i;
+    }
+    console.log(`The factorial of ${number} is ${fact}.`);
+}
+
+// Using a Recursive Function:
+
+// Function to calculate factorial
+// function calculateFactorial(num) {
+//     if (num === 0 || num === 1) {
+//         return 1;
+//     } else {
+//         return num * calculateFactorial(num - 1);
+//     }
+// }
+
+// const number = 5; // Replace with your desired number
+// const result = calculateFactorial(number);
+// console.log(`The factorial of ${number} is ${result}.`);
+
+// Output (for number = 5):
+// The factorial of 5 is 120.
+
+</script>
+
+
+Q.33 Write to print Fibonacci series up to given numbers? 
+
+
+
+Q.34 Write to print number in reverse order e.g.: number = 64728 ---> reverse =82746 in JS? 
+<!--1. Using String Reversal:-->
+
+<!-- Convert the number to a string, reverse it using split('').reverse().join(''), and then convert it back to a number.-->
+
+<script>
+// Example :
+
+const num = 64728;
+const reversedNum = parseInt(String(num).split('').reverse().join(''));
+console.log(reversedNum); // Output: 82746
+
+//2. Using Array Reduce() Method:
+// Convert the number to an array of its digits, then use the reduce() function with a spread operator to reverse the order.
+// // Example:
+// function reverseFunction(num) {
+//     const digits = Array.from(String(num), Number);
+//     const reversedArray = digits.reduce((acc, digit) => [digit, ...acc], []);
+//     return parseInt(reversedArray.join(''));
+// }
+
+// const num = 64728;
+// const reversedNum = reverseFunction(num);
+// console.log(reversedNum); // Output: 82746
+
+// 3.Using String Iteration:
+// Convert the number to a string, iterate backward using a loop, and construct a reversed string by appending digits. Then convert it back to a number.
+// Example:
+
+// function reverseFunction(num) {
+//     const numStr = num.toString();
+//     let reversedStr = '';
+//     for (let i = numStr.length - 1; i >= 0; i--) {
+//         reversedStr += numStr[i];
+//     }
+//     return parseInt(reversedStr);
+// }
+
+// const num = 64728;
+// const reversedNum = reverseFunction(num);
+// console.log(reversedNum); // Output: 82746
+
+
+</script>
+
+
+
+
+Q.35 Write a program make a summation of given number (E.g., 1523 Ans: - 11) in JS? 
+<!--  
+1. Using Array Reduce Method:
+Convert the number to a string, split it into individual digits, and then use the reduce() method to sum up the parsed digits.-->
+
+<script>
+    // Example:
+//     function sumOfDigits(num) {
+//     return num.toString().split('').reduce((sum, digit) => sum + parseInt(digit), 0);
+// }
+
+// const number = 1523;
+// const result = sumOfDigits(number);
+// console.log(`Sum of digits of ${number} is ${result}.`); // Output: 11
+
+// 2. Using Math.floor and Division:
+// Repeatedly add the last digit by calculating the remainder of dividing the number by 10, and update the number by integer division until it becomes 0.
+
+// function sumOfDigits(num) {
+//     let sum = 0;
+//     while (num > 0) {
+//         sum += num % 10;
+//         num = Math.floor(num / 10);
+//     }
+//     return sum;
+// }
+
+// const number = 1523;
+// const result = sumOfDigits(number);
+// console.log(`Sum of digits of ${number} is ${result}.`); // Output: 11
+
+</script>
+
+
+
+
+Q.36 Write a program you have to make a summation of first and last Digit.(E.g., 1234 Ans:-5) in JS? 
+<!-- 1. Using Array Reduce Method: 
+Convert the number to a string, split it into individual digits, and then use the reduce() method to sum up the parsed digits.
+-->
+<script>
+    // Example:
+//     function sumOfFirstAndLastDigits(num) {
+//     const digits = num.toString().split('').map(Number);
+//     return digits[0] + digits[digits.length - 1];
+// }
+
+// const number = 1234;
+// const result = sumOfFirstAndLastDigits(number);
+// console.log(`Sum of first and last digits of ${number} is ${result}.`); // Output: 5
+
+// 2. Using String Operations:
+// Convert the number to a string, extract the first and last characters, and then parse them as integers to find their sum.
+
+// Example:
+// function sumOfFirstAndLastDigits(num) {
+//     const numStr = num.toString();
+//     const firstDigit = parseInt(numStr[0]);
+//     const lastDigit = parseInt(numStr[numStr.length - 1]);
+//     return firstDigit + lastDigit;
+// }
+
+// const number = 1234;
+// const result = sumOfFirstAndLastDigits(number);
+// console.log(`Sum of first and last digits of ${number} is ${result}.`); // Output: 5
+
+</script>
+
+
+
+Q.37 Use console.log() and escape characters to print the following pattern in JS?
+1 1 1 1 1
+2 1 2 4 8
+3 1 3 9 27
+4 1 4 16 64
+5 1 5 25 125
+<script>
+    for (let i = 1; i <= 5; i++) {
+    let row = ''; // Initialize an empty string for each row
+    for (let j = 1; j <= i; j++) {
+        // Calculate the value (i^j)
+        const value = Math.pow(i, j);
+        row += value + ' '; // Add the value to the row
+    }
+    console.log(row.trim()); // Print the row, removing any trailing space
+}
+// This will produce the desired output:
+
+// 1
+// 1 2 4 8
+// 1 3 9 27
+// 1 4 16 64
+// 1 5 25 125
+
+</script>
+
+
+
+
+
+Q.38 Use pattern in console.log in JS?
+1) 1
+1 0
+1 0 1
+1 0 1 0 
+1 0 1 0 1 
+2) A 
+B C
+D E F
+G H I J 
+K L M N O
+3) 1 
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+4) *
+* *
+* * *
+* * * *
+* * * * *
+<script>
+// Pattern 1:
+for (let i = 1; i <= 5; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+        row += (j % 2 === 0) ? '0 ' : '1 ';
+    }
+    console.log(row.trim());
+}
+// Output:
+// 1
+// 1 0
+// 1 0 1
+// 1 0 1 0
+// 1 0 1 0 1
+
+// Pattern 2:
+let char = 'A';
+for (let i = 1; i <= 5; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+        row += char + ' ';
+        char = String.fromCharCode(char.charCodeAt(0) + 1);
+    }
+    console.log(row.trim());
+}
+
+// Output:
+// A
+// B C
+// D E F
+// G H I J
+// K L M N O
+
+// Pattern 3:
+// let num = 1;
+// for (let i = 1; i <= 5; i++) {
+//     let row = '';
+//     for (let j = 1; j <= i; j++) {
+//         row += num + ' ';
+//         num++;
+//     }
+//     console.log(row.trim());
+// }
+
+
+//Output:
+// 1
+// 2 3
+// 4 5 6
+// 7 8 9 10
+// 11 12 13 14 15
+
+// Pattern 4:
+for (let i = 1; i <= 5; i++) {
+    let row = '';
+    for (let j = 1; j <= i; j++) {
+        row += '* ';
+    }
+    console.log(row.trim());
+}
+// Output:
+// *
+// * *
+// * * *
+// * * * *
+// * * * * *
+
+</script>
+
+
+
+
+Q.39 Accept 3 numbers from user using while loop and check each numbers palindrome? 
+
+<!-- Certainly! Let's break this down into steps:
+
+1. Accepting 3 Numbers from the User:
+    We'll use a `while` loop to prompt the user for input three times. We'll store each input in a variable.
+
+2. Checking if Each Number is a Palindrome:
+    We'll create a function to check if a given number is a palindrome. We can use one of the approaches mentioned earlier to determine if the number reads the same from left to right and right to left.
+
+3. Displaying the Results:
+    After checking each number, we'll print whether it's a palindrome or not.
+
+Here's the complete JavaScript code:
+
+// Function to check if a number is a palindrome
+function isPalindrome(num) {
+    const numStr = num.toString();
+    const reversedNumStr = numStr.split('').reverse().join('');
+    return numStr === reversedNumStr;
+}
+
+// Accept 3 numbers from the user
+let count = 1;
+while (count <= 3) {
+    const userInput = parseInt(prompt(`Enter number ${count}:`));
+    if (isNaN(userInput)) {
+        console.log(`Invalid input. Please enter a valid number.`);
+    } else {
+        const result = isPalindrome(userInput);
+        console.log(`Number ${userInput} is ${result ? 'a palindrome' : 'not a palindrome'}.`);
+        count++;
+    }
+}
+-->

@@ -1,0 +1,302 @@
+1. What is JavaScript?
+<!--
+
+JavaScript is a high-level programming language primarily used for creating dynamic and interactive content on web pages. Originally developed by Brendan Eich at Netscape in 1995, JavaScript has since become one of the core technologies of the World Wide Web alongside HTML and CSS.
+
+JavaScript allows developers to add interactivity to websites by enabling features such as animations, form validation, dynamic content updates, and much more. It is widely supported by modern web browsers and can be used both on the client-side (in the browser) and server-side (with platforms like Node.js).
+
+Over the years, JavaScript has evolved significantly, with new features and standards being added to the language. Today, it is used not only for web development but also for building server-side applications, mobile apps, desktop applications, and even in IoT (Internet of Things) development.
+
+-->
+
+
+2. What is the use of isNaN function?
+<!--
+
+The `isNaN()` function in JavaScript is used to determine whether a value is "Not-a-Number" (NaN) or not. This function returns `true` if the value passed to it is NaN, and `false` if the value is a valid number or can be converted into one.
+
+Example:
+
+isNaN(123);      // false, 123 is a number
+isNaN('Hello');  // true, 'Hello' cannot be converted into a number
+isNaN('123');    // false, '123' can be converted into the number 123
+isNaN(NaN);      // true, NaN is "Not-a-Number"
+
+
+It's often used to validate input, especially when dealing with user input where you expect numeric values, but need to handle cases where non-numeric values might be entered.
+
+-->
+
+
+3. What is negative Infinity?
+<!--
+
+    Negative Infinity is a value in JavaScript that represents the smallest possible number, which is a negative number that approaches negative infinity. It is typically used to represent values that are smaller than any other numeric value, essentially representing the concept of negative infinity. In JavaScript, you can obtain negative infinity by using the expression `Number.NEGATIVE_INFINITY`.
+-->
+
+
+4. Which company developed JavaScript?
+<!--
+    JavaScript was developed by Netscape Communications Corporation, particularly by Brendan Eich, in the mid-1990s. It was initially called Mocha, then LiveScript, before settling on JavaScript.
+-->
+
+
+5. What are undeclared and undefined variables?
+<!--
+    Undeclared and undefined variables are both concepts in JavaScript related to variables, but they refer to different situations:
+
+    1.  Undeclared variables:
+        These are variables that have not been declared using the `var`, `let`, or `const` keywords before they are used. If you try to use an undeclared variable, JavaScript will throw a ReferenceError.
+
+        For example:
+        console.log(x); // ReferenceError: x is not defined
+
+    2.  Undefined variables: 
+        These are variables that have been declared but have not been assigned a value, or they have been explicitly set to the value `undefined`. When you try to access such variables, JavaScript returns the value `undefined`.
+
+        For example:
+        let y;
+        console.log(y); // undefined
+
+        Additionally, if you access a property of an object that does not exist, it will also return `undefined`.
+        let obj = {};
+        console.log(obj.foo); // undefined
+
+        In summary, "undeclared" refers to variables that have not been declared at all, while "undefined" refers to variables that have been declared but not yet assigned a value, or properties of objects that do not exist.
+-->
+
+6. Write the code for adding new elements dynamically?
+<!--
+
+
+-->
+
+7. What is the difference between ViewState and SessionState?
+<!--
+
+
+-->
+
+
+8. What is === operator?
+<!--
+    he === operator, also known as the "strict equality operator" or "identity operator," is a comparison operator in JavaScript. It is used to compare two values for equality, but unlike the == operator (loose equality), === performs a strict comparison without type conversion.
+
+    Here's how === works:
+
+    If the operands are of the same type, and their values are equal, === returns true.
+    If the operands are of different types, === returns false, even if their values are similar.
+    It does not perform type coercion. This means that if the operands are of different types, they are considered unequal regardless of their actual values.
+-->
+
+9. How can the style/class of an element be changed?
+<!--
+    1. Changing inline styles directly:
+    You can directly modify the style property of an element to change its style. 
+    
+    For example:
+    document.getElementById("myElement").style.backgroundColor = "red";
+    document.getElementById("myElement").style.fontSize = "20px";
+
+
+    2. Using CSS classes:
+    You can add, remove, or toggle CSS classes on an element using JavaScript. This is particularly useful when you have predefined styles in your CSS and you want to apply them dynamically. 
+    
+    For example:
+
+    // Adding a CSS class
+    document.getElementById("myElement").classList.add("highlight");
+
+    // Removing a CSS class
+    document.getElementById("myElement").classList.remove("highlight");
+
+
+    3. Using inline HTML style attribute:
+    You can also change the style directly in the HTML markup using the style attribute. 
+    
+    For example:
+    <div id="myElement" style="background-color: blue; color: white;">Some content</div>
+-->
+
+
+10. How to read and write a file using JavaScript?
+<!--
+
+    
+-->
+
+11. What are all the looping structures in JavaScript?
+<!--
+    JavaScript offers several looping structures to iterate over collections, execute code repeatedly, or traverse through a sequence of values. 
+    Here are the main looping structures in JavaScript:
+
+    1.for loop:
+        for (initialization; condition; increment/decrement) {
+            // code to be executed
+        }
+
+    2.while loop:
+        while (condition) {
+            // code to be executed
+        }
+
+    3.do...while loop:
+        do {
+            // code to be executed
+        } while (condition);
+
+    4.for...in loop (iterates over the enumerable properties of an object):
+        for (variable in object) {
+            // code to be executed
+        }
+    
+    5.for...of loop (introduced in ES6, iterates over iterable objects like arrays, strings, etc.):
+        for (variable of iterable) {
+           // code to be executed
+        }
+
+Each looping structure has its use cases and advantages. For instance, `for` loops are commonly used when the number of iterations is known beforehand, `while` loops are used when the number of iterations is not known, and `for...of` loops are handy when iterating over iterable objects like arrays or strings. `for...in` loops are useful for iterating over object properties, but be cautious as they iterate over all enumerable properties, including inherited ones.
+-->
+
+12. How can you convert the string of any base to an integer in JavaScript?
+<!--
+    You can convert a string representing a number in any base to an integer in JavaScript using the `parseInt()` function. The `parseInt()` function parses a string and returns an integer
+
+    const integerValue = parseInt(numberString, base);
+    console.log(integerValue); // Output: 10
+
+In this example, the `parseInt()` function takes two arguments:
+
+1. `numberString`: The string to parse.
+2. `base`: The radix (base) of the string. It can be any integer between 2 and 36.
+
+The function parses the string `numberString` as if it were a number in the specified base and returns the integer value.
+
+For instance, if you have a string representing a number in binary (`"1010"`) and you want to convert it to an integer, you specify the base as 2. Similarly, you can convert strings representing numbers in other bases (like octal or hexadecimal) by specifying the appropriate base.
+-->
+
+
+13. What is the function of the delete operator?
+<!--
+    The `delete` operator in JavaScript is used to remove a property from an object. 
+    It does not directly affect the value of the property or its reference, but removes the property itself. 
+    After deletion, attempts to access the deleted property will return `undefined`.
+
+
+var obj = {
+    name: "isha",
+    age: 30
+};
+
+console.log(obj.name);  // Output: "isha"
+
+delete obj.name;
+
+console.log(obj.name);  // Output: undefined
+
+
+However, it's important to note that `delete` only works on properties of objects. It cannot remove variables or functions. 
+
+Additionally, it does not deallocate memory, so it's not recommended for managing memory usage. It's mainly used to remove properties from objects when they're no longer needed.
+
+-->
+
+
+14. What are all the types of Pop up boxes available in JavaScript?
+<!--
+In JavaScript, there are several types of popup boxes commonly used for interaction with users:
+
+1. Alert Box: 
+
+It displays a message with an OK button. Used for alerting users about something.
+
+    alert("This is an alert box!");
+
+
+2. Confirm Box: 
+
+It displays a message with OK and Cancel buttons. Used to confirm or cancel an action.
+
+    var result = confirm("Do you want to proceed?");
+    if (result) {
+            // User clicked OK
+    } else {
+            // User clicked Cancel
+    }
+
+3. Prompt Box: 
+
+It displays a message with an input field, OK, and Cancel buttons. Used to get input from the user.
+
+    var name = prompt("Please enter your name:", "");
+    if (name != null && name != "") {
+        alert("Hello, " + name + "!");
+    }
+
+These popup boxes are commonly used for simple user interactions in web applications.
+
+-->
+
+
+15. What is the use of Void (0)?
+<!--
+`void(0)` in JavaScript is often used to ensure that an anchor (`<a>`) tag with an `href` attribute doesn't cause the browser to navigate to a new page when clicked. 
+
+Ex.
+<a href="javascript:void(0)">Click here</a>
+
+When the user clicks the link, the browser executes the JavaScript code `void(0)`, which doesn't do anything and returns `undefined`. 
+
+As a result, the browser stays on the current page without navigating anywhere.
+
+This technique is commonly used when you want to create clickable elements that perform JavaScript actions without causing page navigation. However, it's worth noting that with modern JavaScript frameworks and libraries, such as React or Angular, direct use of `javascript:void(0)` is less common, as event handling is typically managed through JavaScript functions.
+
+-->
+
+
+16. How can a page be forced to load another page in JavaScript?
+<!--
+In JavaScript, you can force a page to load another page by setting the `window.location` property to the URL of the page you want to navigate to. 
+
+There are a few ways to achieve this:
+
+1. Using `window.location.href`:
+
+    window.location.href = "https://example.com/newpage";
+
+2. Using `window.location.assign()`:
+
+    window.location.assign("https://example.com/newpage");
+
+3. Using `window.location.replace()`:
+
+    window.location.replace("https://example.com/newpage");
+
+All three methods effectively navigate the browser to the specified URL. However, there are slight differences in behavior:
+
+- `window.location.href` and `window.location.assign()` both add a new entry to the browser's history, allowing users to use the back button to navigate back to the previous page.
+- `window.location.replace()` does not add a new entry to the history, so users cannot use the back button to navigate back to the original page.
+
+Choose the appropriate method based on your specific requirements regarding navigation and history management.
+
+-->
+
+
+17. What are the disadvantages of using innerHTML in JavaScript?
+<!-- 
+While `innerHTML` is a convenient and widely-used feature in JavaScript for manipulating HTML content, it does have some disadvantages:
+
+1. Security Risks: Using `innerHTML` to manipulate content can expose your application to security vulnerabilities such as cross-site scripting (XSS) attacks. If the content inserted via `innerHTML` includes user-generated or untrusted data, it could execute malicious scripts.
+
+2. Performance Overhead: Changing the `innerHTML` of an element causes the browser to re-parse and re-render the entire content of that element and its descendants. This can lead to performance issues, especially when dealing with large amounts of content or frequent updates.
+
+3. Event Handlers: When `innerHTML` is used to replace the content of an element, any event handlers attached to elements within that content will be lost. This requires re-attaching event handlers after updating the `innerHTML`, which can be inefficient and error-prone.
+
+4. Memory Leaks: Repeatedly using `innerHTML` to update content without properly cleaning up event handlers, references, or data bindings can lead to memory leaks, especially in long-running applications.
+
+5. Accessibility: Content inserted via `innerHTML` may not be accessible to assistive technologies such as screen readers, as these technologies may not recognize dynamically generated content.
+
+6. Loss of State: If the content inside an element with `innerHTML` is modified, any state associated with the existing content (such as form input values or scroll position) may be lost.
+
+In summary, while `innerHTML` is a powerful tool for dynamically updating HTML content, it should be used carefully and with awareness of its limitations and potential drawbacks. In many cases, using other DOM manipulation methods such as `createElement`, `appendChild`, `insertAdjacentHTML`, or libraries/frameworks like React or Vue.js may offer better performance, security, and maintainability.
+-->

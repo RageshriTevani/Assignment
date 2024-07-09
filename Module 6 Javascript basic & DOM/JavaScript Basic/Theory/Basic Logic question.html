@@ -1,0 +1,991 @@
+=> Basic logic Question
+
+Q.1 What is JavaScript. How to use it? 
+<!--
+    JavaScript is a versatile programming language commonly used by web developers to add interactivity to web pages, applications, servers, and even games. Here are some key points about JavaScript:
+
+1. Web Interactivity: 
+JavaScript allows you to create dynamic and interactive web content. It runs directly in the user’s browser, enhancing the user experience by enabling features like animations, form validation, and real-time updates.
+
+2. Integration with HTML and CSS: 
+JavaScript seamlessly works alongside HTML and CSS. While HTML structures the content, CSS styles it, and JavaScript adds behavior and interactivity.
+
+3. Client-Side Execution: JavaScript executes on the client side (in the user’s browser), making it ideal for tasks that don’t require server communication. For example, form validation, image sliders, and interactive maps.
+
+4. Syntax Basics:
+
+Variables: 
+Use var, let, or const to declare variables.
+
+var x = 5;
+let y = 6;
+const z = x + y;
+
+
+Numbers:
+JavaScript uses double-precision floating-point numbers.
+
+var decimalNumber = 3.14;
+var integerNumber = 3;
+
+
+Arrays: 
+Store multiple values in a single variable.
+var cars = ["Volkswagen", "Jaguar", "Porsche"];
+
+
+Functions: 
+Blocks of reusable code.
+function multiply(p1, p2) {
+    return p1 * p2;
+}
+
+
+Manipulating HTML Content:
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+
+Changing HTML Attributes:
+var imgElement = document.querySelector("img");
+imgElement.src = "new-image.jpg";
+
+-->
+
+Q.2 How many type of Variable in JavaScript? 
+<!--
+    In JavaScript, variables can be classified based on how they are declared and their scope and behavior. There are three main types of variable declarations:
+
+1. var
+2. let
+3. const
+
+1. var
+- Scope: Function-scoped. If declared outside a function, it becomes globally scoped.
+- Hoisting: Variables declared with `var` are hoisted to the top of their scope and initialized with `undefined`.
+- Re-declaration: Can be re-declared within the same scope.
+- Example:
+
+var x = 10;
+function test() {
+    var y = 5;
+    console.log(x); // 10
+    console.log(y); // 5
+}
+test();
+  // console.log(y); // ReferenceError: y is not defined
+
+
+2. let
+- Scope: Block-scoped. It is only accessible within the block it is defined (e.g., within a pair of curly braces `{}`).
+- Hoisting: Variables declared with `let` are hoisted to the top of their block but are not initialized.
+- Re-declaration: Cannot be re-declared within the same scope.
+- Example:
+
+let x = 10;
+if (true) {
+    let x = 5; // Different variable from the one declared outside the block
+    console.log(x); // 5
+}
+  console.log(x); // 10
+
+
+3. const
+- Scope: Block-scoped, similar to `let`.
+- Hoisting: Variables declared with `const` are hoisted to the top of their block but are not initialized.
+- Re-declaration: Cannot be re-declared within the same scope.
+- Immutability: The value of a `const` variable cannot be changed through reassignment. However, if the value is an object, its properties can be modified.
+- Example:
+
+const x = 10;
+  // x = 5; // TypeError: Assignment to constant variable.
+const obj = { name: "Alice" };
+  obj.name = "Bob"; // This is allowed
+  console.log(obj.name); // Bob
+
+
+Summary
+There are three types of variable declarations in JavaScript: `var`, `let`, and `const`. They differ in their scope, hoisting behavior, and re-declaration rules, with `var` being function-scoped and hoisted, while `let` and `const` are block-scoped and not initialized upon hoisting. `const` also enforces immutability for the assigned value, though the content of objects can still be modified.
+-->
+
+Q.3 Define a Data Types in js?
+<!--
+    In JavaScript, data types can be broadly classified into two categories: primitive types and object types.
+
+    Primitive Data Types
+
+1. Number:
+    - Represents numeric values, both integers and floating-point numbers.
+    - Example: `let num = 42;` or `let pi = 3.14;`
+
+2. String:
+    - Represents sequences of characters enclosed in single quotes (`'...'`), double quotes (`"..."`), or backticks (`` `...` ``).
+    - Example: `let str = "Hello, World!";`
+
+3. Boolean:
+    - Represents logical values `true` or `false`.
+    - Example: `let isTrue = true;`
+
+4. Undefined:
+    - Represents a variable that has been declared but not assigned a value.
+   - Example: `let x; // x is undefined`
+
+5. Null:
+    - Represents the intentional absence of any object value.
+    - Example: `let y = null;`
+
+6. Symbol:
+    - Represents a unique and immutable value, often used as object property keys.
+    - Example: `let sym = Symbol('unique');`
+
+7. BigInt:
+    - Represents integers with arbitrary precision, used for very large numbers.
+    - Example: `let bigInt = 1234567890123456789012345678901234567890n;`
+
+# Object Data Types
+
+1. Object:
+    - A collection of properties, where each property is a key-value pair.
+    - Example: `let obj = { name: "Alice", age: 25 };`
+
+2. Array:
+    - A special type of object for storing ordered collections of values.
+    - Example: `let arr = [1, 2, 3, 4, 5];`
+
+3. Function:
+    - Objects that can be called or invoked.
+    - Example: `function greet() { console.log("Hello!"); }`
+
+4. Date:
+    - Represents dates and times.
+    - Example: `let now = new Date();`
+
+5. RegExp:
+    - Represents regular expressions for pattern matching within strings.
+    - Example: `let regex = /ab+c/;`
+
+6. Error:
+    - Represents runtime errors.
+    - Example: `let error = new Error("Something went wrong");`
+
+    Summary of Data Types in JavaScript
+
+- Primitive Types:
+    - Number
+    - String
+    - Boolean
+    - Undefined
+    - Null
+    - Symbol
+    - BigInt
+
+- Object Types:
+    - Object
+    - Array
+    - Function
+    - Date
+    - RegExp
+    - Error
+
+Each data type serves a different purpose and has its own set of properties and methods that can be used to manipulate values of that type.
+-->
+
+Q.4 Write a mul Function Which will Work Properly When invoked With Following Syntax.
+<!--
+To create a `mul` function that works properly when invoked with the following syntax:
+
+console.log(mul(2)(3)(4)); // 24
+console.log(mul(5)(-1)(2)); // -10
+
+
+You can use currying. Currying is a technique where a function takes multiple arguments one at a time and returns a new function each time until all arguments have been provided. Here's how you can implement the `mul` function:-->
+<script>
+    function mul(a) {
+    return function(b) {
+        return function(c) {
+          return a * b * c;
+        };
+    };
+    }
+
+    console.log(mul(2)(3)(4)); // 24
+    console.log(mul(5)(-1)(2)); // -10
+</script>
+    <!--
+    1. `mul(a)` returns a function that takes one argument `b`.
+    2. The function that takes `b` returns another function that takes one argument `c`.
+    3. The innermost function takes `c` and returns the product of `a`, `b`, and `c`.
+
+    This approach ensures that `mul` can be called in a chain of three invocations, each time providing one argument, and eventually returns the final product.-->
+
+
+
+Q.5 What is the difference between undefined and undeclared in JavaScript?
+<!--
+In JavaScript, the terms undefined and undeclared refer to different states of variables:
+
+Undefined: 
+A variable is considered undefined if it has been declared in the code but has not been assigned a value. In JavaScript, variables are automatically initialized with the value of undefined when they are declared. For example:
+
+let x;
+console.log(x); // Output: undefined
+
+Undeclared: 
+A variable is undeclared if it has not been defined at all in the code, meaning there is no declaration statement for it using var, let, or const. Trying to access such a variable will result in a ReferenceError because the JavaScript engine does not recognize it. For example:
+
+console.log(y); // ReferenceError: y is not defined
+
+To summarize, an undefined variable exists but has no value, while an undeclared variable does not exist in the program’s scope at all
+-->
+
+
+
+Q.6 Using console.log() print out the following statement: The quote 'There is no exercise
+better for the heart than reaching down and lifting people up.' by John Holmes teaches us to
+help one another. Using console.log() print out the following quote by Mother Teresa:
+
+    <!--Quote by John Holmes-->
+<script>
+console.log("The quote 'There is no exercise better for the heart than reaching down and lifting people up.' by John Holmes teaches us to help one another.");
+</script>
+
+    <!-- Quote by Mother Teresa -->
+
+<script>
+console.log("Love begins by taking care of the nearest - Mother Teresa.");
+</script>
+
+
+
+Q.7 Check if typeof '10' is exactly equal to 10. If not make it exactly equal.
+<!--
+In JavaScript, the typeof operator returns a string indicating the type of the unevaluated operand. So, when you check the type of '10', which is a string, it will not be exactly equal to the number 10. Here’s how you can check it:-->
+<script>
+if (typeof '10' === 10) {
+    console.log('They are equal');
+    } else {
+    console.log('They are not equal'); // This will be executed
+}
+</script>
+
+    <!-- To make the string '10' exactly equal to the number 10, you need to convert the string to a number. You can do this using the Number() function, like so: -->
+
+    <script>
+        let str = '10';
+        let num = Number(str);
+
+        if (num === 10) {
+            console.log('Now they are exactly equal');
+        }
+
+    </script>
+
+
+Q.8 Write a JavaScript Program to find the area of a triangle.
+<script>
+    // Function to calculate the area of a triangle using Heron's formula
+
+function calculateTriangleArea(side1, side2, side3) {
+  // Convert string input to numbers
+    side1 = parseFloat(side1);
+    side2 = parseFloat(side2);
+    side3 = parseFloat(side3);
+
+  // Calculate the semi-perimeter
+    const s = (side1 + side2 + side3) / 2;
+
+  // Calculate the area
+    const area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+    return area;
+}
+
+// Example usage:
+const side1 = prompt("Enter the length of side 1:");
+const side2 = prompt("Enter the length of side 2:");
+const side3 = prompt("Enter the length of side 3:");
+
+const area = calculateTriangleArea(side1, side2, side3);
+console.log(`The area of the triangle is ${area.toFixed(2)}`);
+
+</script>
+
+
+
+
+Q.9 Write a JavaScript program to calculate days left until next Christmas.
+<script>
+
+// Get the current date
+let today = new Date();
+
+// Create a Date object for Christmas of the current year
+let christmasYear = today.getFullYear();
+if (today.getMonth() === 11 && today.getDate() > 25) {
+    christmasYear += 1; // Set Christmas for the next year
+}
+let christmasDate = new Date(christmasYear, 11, 25);
+
+// Calculate the difference in days between today and Christmas
+let dayMilliseconds = 1000 * 60 * 60 * 24;
+let remainingDays = Math.ceil((christmasDate.getTime() - today.getTime()) / dayMilliseconds);
+
+console.log(`There are ${remainingDays} days remaining until Christmas.`);
+
+</script>
+
+
+
+Q.10 What is Conditional Statement?
+<!--
+Conditional statements in JavaScript allow you to execute specific blocks of code based on conditions. They let you create “if-then” statements, allowing different actions depending on different situations123. Here are the main types:
+
+1.if Statement:
+
+Use if to specify a block of code to be executed if a specified condition is true.
+Example:
+if (hour < 18) {
+    greeting = "Good day";
+}
+
+2.else Statement:
+
+Use else to specify a block of code to be executed if the same condition is false.
+Example:
+if (hour < 18) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+3.else if Statement:
+
+Use else if to specify a new condition if the first condition is false.
+Example:
+if (time < 10) {
+    greeting = "Good morning";
+} else if (time < 20) {
+    greeting = "Good day";
+} else {
+    greeting = "Good evening";
+}
+
+-->
+
+
+Q.11 Find circumference of Rectangle formula : C = 4 * a 
+
+<script>
+// Function to calculate the perimeter of a rectangle
+function perimeterRectangle(a, b) {
+    return 2 * (a + b);
+}
+
+// Example usage
+let length = 5;
+let width = 6;
+let circumference = perimeterRectangle(length, width);
+
+console.log("Circumference of the rectangle:", circumference);
+</script>
+
+
+
+
+Q.12 WAP to convert years into days and days into years
+<!-- 1. Convert Years to Days:
+Given a number of years, we can calculate the equivalent days by multiplying the years by 365 (assuming a non-leap year).
+Here’s a function that does this: -->
+<script>
+    function yearsToDays(years) {
+    return years * 365;
+    }
+
+const yearsInput = 3; // Example: 3 years
+const daysOutput = yearsToDays(yearsInput);
+console.log(`${yearsInput} years = ${daysOutput} days`);
+
+</script>
+
+<!-- 2. Convert Days to Years, Months, and Days:
+
+To convert days into years, months, and days, we can use the following formula:
+Calculate the number of years by dividing the total number of days by 365.
+Calculate the number of months by taking the remainder of the above calculation and dividing it by 30.
+The remaining days are the days component.-->
+<script>
+    function daysToYearsMonthsDays(days) {
+    const years = Math.floor(days / 365);
+    const months = Math.floor((days % 365) / 30);
+    const remainingDays = days % 30;
+    return `${years} years, ${months} months, and ${remainingDays} days`;
+}
+
+const daysInput = 1000; // Example: 1000 days
+const formattedOutput = daysToYearsMonthsDays(daysInput);
+console.log(`${daysInput} days = ${formattedOutput}`);
+
+</script>
+
+
+
+
+Q.13 Convert temperature Fahrenheit to Celsius (Conditional logic Question)
+
+<script>
+// Approach 1: Using a basic function
+function fahrenheitToCelsius(fahrenheit) {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+let fahrenheit = 100; // Example: 100°F
+let celsius = fahrenheitToCelsius(fahrenheit);
+console.log(`${fahrenheit}°F is ${celsius.toFixed(2)}°C`);
+
+
+// Approach 2: Using an arrow function
+const fahrenheitToCelsiusArrow = fahrenheit => (fahrenheit - 32) * 5 / 9;
+let celsiusArrow = fahrenheitToCelsiusArrow(fahrenheit);
+console.log(`${fahrenheit}°F is ${celsiusArrow.toFixed(2)}°C`);
+</script>
+
+
+
+
+Q.14 Write a JavaScript exercise to get the extension of a filename.
+<!-- 1. Using split() and pop(): -->
+<script>
+    function getFileExtension(filename) {
+    return filename.split('.').pop();
+    }
+
+// Example usage:
+var file1 = "50.xsl";
+var file2 = "30.doc";
+console.log(getFileExtension(file1)); // Returns "xsl"
+console.log(getFileExtension(file2)); // Returns "doc"
+
+</script>
+
+<!-- 2. Using lastIndexOf() and substring(): -->
+<script>
+    function getFileExtension(filename) {
+    var dotIndex = filename.lastIndexOf('.');
+    if (dotIndex === -1) return ""; // No extension found
+    return filename.substring(dotIndex + 1);
+}
+
+// Example usage:
+console.log(getFileExtension("file.txt")); // Returns "txt"
+console.log(getFileExtension("image.jpg")); // Returns "jpg"
+
+</script>
+
+
+
+
+Q.15 What is the result of the expression (5 > 3 && 2 < 4)?
+<!-- The result of the expression (5 > 3 , \text{and} , 2 < 4) is true. Both conditions evaluate to true, so the logical AND operator returns true.  -->
+
+
+
+Q.16 What is the result of the expression (true && 1 && "hello")?
+<!-- The result of the expression (true && 1 && "hello") is "hello". When using the logical AND operator (&&), JavaScript evaluates each operand from left to right. If all operands are truthy, it returns the last truthy value. In this case, both `true` and `1` are truthy, so the result is "hello".  -->
+
+
+
+Q.17 What is the result of the expression true && false || false && true?
+<!-- 
+
+1. Evaluate the left side: `true && false`. Since one of the operands is `false`, the result is `false`.
+2. Evaluate the right side: `false && true`. Again, one of the operands is `false`, so the result is `false`.
+3. Finally, combine the results using the logical OR operator (`||`): `false || false`, which evaluates to `false`.
+
+Therefore, the overall result is `false`. -->
+
+
+
+Q.18 What is a Loop and Switch Case in JavaScript define that 
+<!-- 1.Loops:
+Loops allow you to execute a block of code repeatedly until a specific condition is met.
+
+They are essential for streamlining repetitive tasks within your code.
+
+JavaScript supports different types of loops:-->
+
+<script>
+    // for loop: 
+    // Executes a block of code a specified number of times.
+
+    for (let i = 0; i < 5; i++) {
+        // Code to be executed
+    }
+</script>
+
+
+<script>
+    // while loop: 
+    // Continues executing a block of code while a specified condition is true.
+
+    let count = 0;
+    while (count < 10) {
+        // Code to be executed
+        count++;
+    }
+</script>
+
+<script>
+    // do/while loop: 
+    // Similar to while, but ensures that the code block runs at least once.
+
+    let number = 1;
+    do {
+        // Code to be executed
+        number++;
+    } while (number <= 5);
+</script>
+
+<!-- 2.Switch Case Statement:
+The switch statement allows you to perform different actions based on different conditions.
+
+It's an alternative to multiple if-else statements when the conditions are based on a single value.-->
+<script>
+    switch (expression) {
+    case value1:
+        // Code block for value1
+        break;
+    case value2:
+        // Code block for value2
+        break;
+    // ...
+    default:
+        // Code block if no match
+}
+
+</script>
+
+
+
+
+Q.19 What is the use of is Nan function?
+<!-- The isNaN function is used to determine whether a given value is NaN (Not a Number). NaN is a special value in JavaScript that represents a number that is undefined or unrepresentable. isNaN returns true if the value is NaN, and false otherwise. -->
+
+<script>
+    console.log(isNaN(NaN)); // true
+    console.log(isNaN(123)); // false
+    console.log(isNaN('hello')); // true, because 'hello' can't be converted to a number
+    console.log(isNaN('123')); // false, because '123' can be converted to a number (123)
+</script>
+
+<!-- It's important to note that isNaN returns true for some values that you might not expect, like strings that contain only numbers, because JavaScript tries to convert the string to a number before performing the comparison. For this reason, it's often recommended to use Number.isNaN instead, which behaves more consistently. -->
+<script>
+    console.log(Number.isNaN(NaN)); // true
+    console.log(Number.isNaN(123)); // false
+    console.log(Number.isNaN('hello')); // false, because 'hello' can't be converted to a number
+    console.log(Number.isNaN('123')); // false, because '123' can't be converted to a number (123)
+</script>
+
+
+
+Q.20 What is the difference between && and || in JavaScript?
+<!-- 
+    Certainly! Let's dive into the differences between the logical operators `&&` (AND) and `||` (OR) in JavaScript:
+
+1. AND (`&&`):
+    - The `&&` operator returns `true` if **both** operands are truthy.
+    - If the first operand is falsy, it short-circuits and returns that value without evaluating the second operand.
+    - Example:
+
+    const x = 5;
+    const y = 3;
+    console.log(x < 10 && y > 1); // true
+
+2. OR (`||`):
+    - The `||` operator returns `true` if **at least one** operand is truthy.
+    - If the first operand is truthy, it short-circuits and returns that value without evaluating the second operand.
+    - Example:
+
+    const a = 5;
+    const b = 0;
+    console.log(a == 5 || b == 5); // false
+
+3. Precedence:
+    - `&&` has higher precedence than `||`.
+    - So, `a && b || c` is evaluated as `(a && b) || c`.
+
+Remember, these operators are essential for creating conditional expressions and controlling program flow! -->
+
+
+
+Q.21 What is the use of Void (0)?
+<!-- 
+1. What is void 0?
+
+void is a prefix keyword in JavaScript that takes one argument and always returns undefined.
+
+When you use void 0, it evaluates to undefined.-->
+<script>
+console.log(void 0); // Logs: undefined
+console.log(void (0)); // Also logs: undefined
+console.log(void "hello"); // Still logs: undefined
+console.log(void (new Date())); // Again, logs: undefined
+</script>
+
+<!-- 2. Why use void 0 instead of undefined?
+Ideally, we’d just use undefined directly—it’s simpler and easier to understand.
+However, there’s a catch: undefined is not a reserved word; it’s a property of the global object.
+You could assign a new value to undefined, which could lead to unexpected behavior.
+Example (though not recommended):-->
+<script>
+    (function () {
+        console.log(undefined); // Logs: "undefined"
+        var undefined = "new value";
+        console.log(undefined); // Logs: "new value"
+    })();
+
+</script>
+<!-- 3. Why void 0 specifically?
+
+void 0 cannot be overridden; it always returns undefined.
+Using 0 as the argument is idiomatic and concise.
+While other values would work, 0 is a common choice.
+Note: In modern JavaScript environments, undefined is generally safe, but void 0 remains shorter.
+For example, minifiers often replace undefined with void 0 to reduce code size. 
+
+4. Practical Use Cases:
+Preventing form submissions or link navigation:
+
+You’ll often see javascript:void(0) as the href value for links to prevent page refresh or navigation.
+
+It effectively means “do nothing.”
+
+Event handlers:
+
+In event handlers, using void (0) ensures no unintended side effects.
+
+For instance, preventing a button click from triggering unwanted behavior.
+
+In summary, void 0 is a concise way to ensure consistent behavior and avoid potential issues with undefined.-->
+
+
+
+
+Q.22 Check Number Is Positive or Negative in JavaScript
+<!--You can check whether a number is positive, negative, or zero in JavaScript using various approaches -->
+<script>
+
+    // 1. Using if…else:
+// const number = parseInt(prompt("Enter a number: "));
+// if (number > 0) {
+//     console.log("The number is positive");
+// } else if (number < 0) {
+//     console.log("The number is negative");
+// } else {
+//     console.log("The number is zero");
+// }
+
+</script>
+<!--This program takes input from the user and checks whether the number is positive, negative, or zero. The conditions number > 0, number < 0, and number == 0 handle each case respectively. -->
+
+<script>
+    //2. Using Math.sign():
+    function checkNumberType(num) {
+    switch (Math.sign(num)) {
+        case 1:
+            console.log("The number is positive");
+            break;
+        case -1:
+            console.log("The number is negative");
+            break;
+        default:
+            console.log("The number is zero");
+    }
+}
+// Example usage:
+checkNumberType(5); // Output: "The number is positive"
+checkNumberType(-3); // Output: "The number is negative"
+checkNumberType(0); // Output: "The number is zero"
+
+</script>
+<!-- The Math.sign() method returns -1 for negative numbers, 1 for positive numbers, and 0 for zero.-->
+
+
+
+
+Q.23 Find the Character Is Vowel or Not ?
+<script>
+// 1. Using Conditional Statements:
+
+// We can use if-else conditional statements to check if the character is a vowel or not.
+// Example: 
+function checkChar(char) {
+    const ch = char.toLowerCase();
+    if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
+        console.log("Given character is a Vowel");
+    } else {
+        console.log("Given character is a Consonant");
+    }
+}
+checkChar('G'); // Output: Given character is a Consonant
+checkChar('A'); // Output: Given character is a Vowel
+</script>
+
+
+<script>
+// 2. Using JavaScript Array and .includes() Method:
+
+// Create an array of vowels and use the .includes() method to check if the character is present in the array.
+// Example:
+
+function checkChar(char) {
+    const ch = char.toLowerCase();
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    if (vowels.includes(ch)) {
+        console.log("Given character is a Vowel");
+    } else {
+        console.log("Given character is a Consonant");
+    }
+}
+checkChar('E'); // Output: Given character is a Vowel
+checkChar('J'); // Output: Given character is a Consonant
+
+</script>
+
+
+<script>
+// 3.  Using JavaScript Regular Expression:
+
+// Create a regular expression for vowels and test if the input character satisfies the regex condition.
+// Example:
+
+function checkChar(char) {
+    const ch = char.toLowerCase();
+    const regex = /^[aeiou]$/i;
+    if (regex.test(ch)) {
+        console.log("Given character is a Vowel");
+    } else {
+        console.log("Given character is a Consonant");
+    }
+}
+checkChar('I'); // Output: Given character is a Vowel
+checkChar('Z'); // Output: Given character is a Consonant
+
+</script>
+
+
+
+
+Q.24 Write to check whether a number is negative, positive or zero?
+<!--  You can determine whether a number is negative, positive, or zero in JavaScript using different approaches.
+-->
+<script>
+    // Using if else:
+
+// const number = parseInt(prompt("Enter a number: "));
+// if (number > 0) {
+//     console.log("The number is positive");
+// } else if (number < 0) {
+//     console.log("The number is negative");
+// } else {
+//     console.log("The number is zero");
+// }
+
+</script>
+<!-- 
+    This program takes input from the user and checks whether the number is positive, negative, or zero. The conditions number > 0, number < 0, and number == 0 handle each case respectively. -->
+
+<script>
+// Using Math.sign():
+function checkNumberType(num) {
+    switch (Math.sign(num)) {
+        case 1:
+            console.log("The number is positive");
+            break;
+        case -1:
+            console.log("The number is negative");
+            break;
+        default:
+            console.log("The number is zero");
+    }
+}
+// Example usage:
+checkNumberType(5); // Output: "The number is positive"
+checkNumberType(-3); // Output: "The number is negative"
+checkNumberType(0); // Output: "The number is zero"
+
+
+</script>
+<!-- The Math.sign() method returns -1 for negative numbers, 1 for positive numbers, and 0 for zero.-->
+
+
+
+Q.25 Write to find number is even or odd using ternary operator in JS?
+<!-- You can use the ternary operator to check whether a number is odd or even in JavaScript. -->
+<Script>
+    function checkEvenOrOdd(number) {
+    const result = number % 2 === 0 ? "even" : "odd";
+    return result;
+}
+
+// Example usage:
+console.log(checkEvenOrOdd(4)); // Output: "even"
+console.log(checkEvenOrOdd(7)); // Output: "odd"
+
+</Script>
+<!--In the checkEvenOrOdd function, we calculate the remainder when dividing the input number by 2. If the remainder is 0, the number is even; otherwise, it’s odd. The ternary operator simplifies this logic into a concise expression. -->
+
+
+
+
+Q.26 Write find maximum number among 3 numbers using ternary operator in JS?
+<!--  
+You can find the maximum number among three numbers using the ternary operator in JavaScript.
+-->
+<script>
+    function findMax(num1, num2, num3) {
+    const max = num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+    return max;
+}
+
+// Example usage:
+console.log(findMax(5, 10, 15)); // Output: 15
+console.log(findMax(20, 8, 12)); // Output: 20
+
+</script>
+<!-- 
+    In the findMax function, we compare the three input numbers using nested ternary operators. The expression (num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3)) ensures that we find the largest among the three. -->
+
+
+
+Q.27 Write to find minimum number among 3 numbers using ternary operator in JS? 
+<!-- You can find the maximum number among three numbers using the ternary operator in JavaScript.-->
+
+<script>
+    function findMax(num1, num2, num3) {
+        const max = num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+    return max;
+    }
+
+// Example usage:
+console.log(findMax(5, 10, 15)); // Output: 15
+console.log(findMax(20, 8, 12)); // Output: 20
+
+</script>
+<!-- In the findMax function, we compare the three input numbers using nested ternary operators. The expression (num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3)) ensures that we find the largest among the three. -->
+
+
+
+Q.28 Write to find the largest of three numbers in JS?
+<!--  
+You can find the largest among three numbers in JavaScript using different approaches. -->
+<script>
+    //1. Using if…else:
+const num1 = parseFloat(prompt("Enter first number: "));
+const num2 = parseFloat(prompt("Enter second number: "));
+const num3 = parseFloat(prompt("Enter third number: "));
+
+let largest;
+
+if (num1 >= num2 && num1 >= num3) {
+    largest = num1;
+} else if (num2 >= num1 && num2 >= num3) {
+    largest = num2;
+} else {
+    largest = num3;
+}
+
+console.log("The largest number is " + largest);
+
+</script>
+<!-- In this program, we take input from the user and compare the numbers using if...else statements. The conditions num1 >= num2 && num1 >= num3, num2 >= num1 && num2 >= num3, and the logical AND (&&) operator help determine the largest number.-->
+
+<script>
+    //1. Using Math.max():
+// const num1 = parseFloat(prompt("Enter first number: "));
+// const num2 = parseFloat(prompt("Enter second number: "));
+// const num3 = parseFloat(prompt("Enter third number: "));
+
+// const largest = Math.max(num1, num2, num3);
+
+// console.log("The largest number is " + largest);
+
+</script>
+
+<!-- The Math.max() function returns the largest number among the provided values. It simplifies finding the maximum value.-->
+
+
+
+
+Q.29 Write to show in js
+<!-- o show or hide an element using JavaScript, you can manipulate its style.display property. -->
+<script>
+    function showStuff(id) {
+    document.getElementById(id).style.display = 'block'; // Show the element
+}
+
+function hideStuff(id) {
+    document.getElementById(id).style.display = 'none'; // Hide the element
+}
+
+</script>
+
+
+i. Monday to Sunday using switch case in JS?
+<!-- 
+To display the days of the week using a switch statement in JavaScript, you can use the getDay() method to get the current day as a number (where Sunday is 0, Monday is 1, and so on).
+-->
+<script>
+    let day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+        default:
+            day = "Invalid day"; // Handle unexpected values
+        }
+console.log(`Today is ${day}.`);
+
+</script>
+
+
+
+ii. Vowel or Consonant using switch case in JS? 
+<script>
+    function checkVowelOrConsonant(char) {
+    switch (char.toLowerCase()) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            return "Vowel";
+        default:
+            return "Consonant";
+    }
+}
+
+const inputChar = 'a'; // Replace with the character you want to check
+const result = checkVowelOrConsonant(inputChar);
+console.log(`The character '${inputChar}' is a ${result}.`);
+
+</script>
+
+<!-- The checkVowelOrConsonant function takes a character as input.
+It converts the character to lowercase using char.toLowerCase() to handle both uppercase and lowercase input.
+The switch statement checks whether the character is one of the vowels (‘a’, ‘e’, ‘i’, ‘o’, ‘u’) and returns the appropriate label (“Vowel” or “Consonant”). -->

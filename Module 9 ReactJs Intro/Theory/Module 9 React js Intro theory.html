@@ -1,0 +1,274 @@
+What is React Js?
+<!-- 
+React, also known as React.js or ReactJS, is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.
+
+    - React allows developers to break down the UI into smaller, self-contained components.
+
+    - JSX is a syntax extension for JavaScript that allows developers to write HTML-like code within their JavaScript files.
+
+    - React maintains a lightweight representation of the actual DOM in memory.
+
+    - When changes occur, React efficiently updates only the necessary parts of the DOM.
+
+-->
+
+
+
+What is NPM in React Js?
+<!--  
+NPM(Node Package Manager) is a powerful tool for managing JavaScript code. It serves as the default package manager for ode.js, a popular runtime environment for executing JavaScript code outside a web browser⁶. Here are some key points about NPM:
+
+    - NPM is the world's largest software registry, containing over 800,000 code packages.
+    - Open-source developers use NPM to share software, and organizations use it to manage private development.
+    - You can download NPM packages without any registration or login.
+    - NPM includes a command-line interface (CLI) that allows you to download and install software packages.
+    - For example, you can use `npm install <package>` to install dependencies for your project.
+    - All NPM packages are defined in files called `package.json`.
+    - The content of `package.json` is written in JSON format and includes fields like `name` and `version`.
+    - Dependencies are also specified in the `package.json` file.
+    - If you want to share your own software, you can publish it in the NPM registry.
+    - Use `npm publish` from your project directory after logging in. -->
+
+
+
+• What is Role of Node Js in react Js?
+<!--  
+Node.js plays a crucial role in the React ecosystem, especially during development and deployment. Let's explore its significance:
+
+1. Development Environment:
+    - React applications are built using JavaScript, and Node.js provides the runtime environment for executing JavaScript code outside the browser.
+    - Developers use Node.js to set up their development environment, manage dependencies, and run build scripts.
+    - It simplifies tasks like bundling, transpiling, and hot reloading during development.
+
+2. Package Management:
+    - NPM (Node Package Manager) is an essential part of Node.js.
+    - React projects rely on NPM to manage dependencies, install packages, and share reusable code.
+    - Developers can easily add third-party libraries and tools to their React projects using NPM.
+
+3. Server-Side Rendering (SSR):
+    - Node.js enables server-side rendering (SSR) for React applications.
+    - SSR improves initial page load performance by rendering HTML on the server before sending it to the client.
+    - Libraries like Next.js (built on top of React) leverage Node.js for SSR.
+
+4. APIs and Backend Services:
+    - While React focuses on the front end, Node.js handles back-end services.
+    - Developers can create APIs, handle database connections, and manage user authentication using Node.js.
+    - Express.js, a popular Node.js framework, is often used for building RESTful APIs.
+
+5. Deployment and Hosting:
+    - Node.js is commonly used for deploying React applications.
+    - Platforms like Heroku, Netlify, and Vercel support Node.js hosting.
+    - Developers can easily deploy both the front-end (React) and back-end (Node.js) parts of their application.
+
+
+-->
+• What is CLI command In React Js?
+<!--  
+In React, the CLI (Command Line Interface) provides essential tools for creating, managing, and building React applications. 
+Here are some key CLI commands:
+
+1. Create React App:
+The most common way to start a new React project is by using Create React App.
+To create a new React app, run the following command in your terminal
+
+    npx create-react-app my-app
+
+Replace my-app with your desired project name.
+This command sets up a modern React build environment with sensible defaults and no manual configuration
+
+2. Running the Development Server:
+After creating your app, navigate into the project folder:
+
+    cd my-app
+
+Start the development server with:
+    npm start
+This command launches your app locally at http://localhost:3000/
+
+3. Adding TypeScript (Optional):
+To create a TypeScript-based React app, use the --template typescript flag:
+    npx create-react-app my-app --template typescript
+
+TypeScript provides static type checking and enhances code quality.
+
+4. Other Package Managers:
+By default, Create React App uses npm to manage dependencies.
+If you prefer Yarn, use the following command:
+    yarn create react-app my-app
+-->
+
+
+• What is Components in React Js?
+<!--  
+    React components are the fundamental building blocks of React applications. They encapsulate logic, state, and UI rendering, making it easier to create reusable and modular user interfaces. Here are some key points about React components:
+
+1. Function Components:
+
+Function components are like JavaScript functions that return HTML elements.
+
+They work in isolation and return UI elements.
+
+Function components are easier to understand and preferred in modern React development.
+
+Example of a function component 
+
+function Car() {
+    return <h2>Hi, I am a Car!</h2>;
+}
+
+2. Class Components (Less Common):
+Class components extend React.Component.
+They have a render() method that returns HTML.
+Example of a class component 
+
+class Car extends React.Component {
+    render() {
+        return <h2>Hi, I am a Car!</h2>;
+    }
+}
+
+3. Using Components:
+To use a component, treat it like an HTML element:
+
+<Car />
+
+Components can also receive props (properties) for dynamic behavior.
+
+4.Composition:
+Components can be nested inside other components.
+Example of using the Car component inside a Garage component:
+
+function Garage() {
+    return (
+        <>
+            <h1>Who lives in my Garage?</h1>
+            <Car />
+        </>
+    );
+}
+
+-->
+
+
+
+• What is Header and Content Components in React Js?
+<!--  
+In a React application, the Header, Content, and Footer components are essential for creating a structured layout.
+1. Header:
+The header typically contains global navigation elements such as menus, logos, and user account information.
+It remains fixed and common across all screens within your app.
+You can implement it using a separate component, ensuring consistency throughout your application1.
+
+2. Content:
+The content area dynamically renders the main content based on the screen or component being displayed.
+It switches between different components as users navigate through your app.
+You can manage the content area by using React Router for routing and rendering different components based on the current route.
+Styling and responsiveness play a crucial role in ensuring a seamless user experience.
+
+Footer:
+Similar to the header, the footer remains fixed and common across screens.
+It often contains copyright information, links to legal pages, or other relevant details.
+Implement the footer as a separate component to maintain consistency.
+-->
+
+
+• How to install React Js on Windows, Linux Operating System? How to Install
+NPM and How to check version of NPM?
+<!--  
+1. Install Node.js:
+
+React.js requires Node.js as a prerequisite. Node.js is a JavaScript runtime environment that allows you to run JavaScript on the server side.
+Visit the official Node.js website and download the installer for your operating system (Windows, macOS, or Linux).
+Install Node.js by following the installation instructions.
+    node -v
+
+2. Install React using create-react-app (CRA):
+Open your terminal or command prompt and navigate to the directory where you want to create your React project.
+Run the following command to globally install the Create React App tool:
+
+npm install -g create-react-app
+
+To verify the installation, type:
+create-react-app --version
+
+3. Create Your React App:
+Inside your project directory, run:
+npx create-react-app my-react-app
+
+Navigate to the newly created app directory:
+cd my-react-app
+
+4. Check NPM Version:
+Ensure that your NPM version is at least 5.2.0 or newer (required for create-react-app).
+
+-->
+
+
+
+• How to check version of React Js?
+<!--  
+The package.json contains metadata about your project, including dependencies. To find the React version, look under the list of dependencies in the package.json file.
+If you’re starting a new React project, create it using the following command:
+    npx create-react-app name_of_the_app
+Open your command line interface and run the following command:
+    npm view react version
+
+import React from 'react';
+console.log(React.version);
+-->
+
+
+• How to change in components of React Js?
+<!--  
+Creating Components:
+Components can be either functional or class-based.
+Functional components are simpler and preferred in modern React applications. They are JavaScript functions that return JSX markup.
+Class components extend React.Component and include a render() method that returns HTML.
+Example of a class component:
+function Car() {
+    return <h2>Hi, I am a Car!</h2>;
+}
+Example of a class component:
+
+To modify a component, you can:
+const MyComponent = () => {
+    return <div style={{ color: 'red' }}>Hello, World!</div>;
+};
+
+-->
+
+
+• How to Create a List View in React Js?
+<!-- 
+Create an Array of Data:
+const people = [
+    'Creola Katherine Johnson: mathematician',
+    'Mario José Molina-Pasquel Henríquez: chemist',
+    'Percy Lavon Julian: chemist',
+    'Subrahmanyan Chandrasekhar: astrophysicist'
+];
+
+Map the Data to JSX Elements:
+const listItems = people.map(person => <li key={person}>{person}</li>);
+
+Render the List:
+return <ul>{listItems}</ul>;
+
+Add Unique Keys:
+import React from 'react';
+
+const List = () => {
+    const people = [
+        'Creola Katherine Johnson: mathematician',
+        'Mario José Molina-Pasquel Henríquez: chemist',
+        'Percy Lavon Julian: chemist',
+        'Subrahmanyan Chandrasekhar: astrophysicist'
+    ];
+
+    const listItems = people.map(person => <li key={person}>{person}</li>);
+
+    return <ul>{listItems}</ul>;
+};
+
+export default List;
+-->

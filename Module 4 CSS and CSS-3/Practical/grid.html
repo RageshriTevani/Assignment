@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Grid of Images</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+    .row {
+        background-color: black;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    /* Create three equal columns that sits next to each other */
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 5px 5px;
+    }
+
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+
+    .textarea{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-left: 150px;
+        text-align: end;
+        display: inline-block;
+    }
+    h1{
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+    }
+    .links{
+        color: white;
+        text-decoration: none;
+        list-style-type: none;
+        margin-top: 20px;
+    }
+    
+    .icons{
+        display: flex;
+        color: white;
+        float: inline-end;
+        margin-left: 90px;
+        margin-top: 40px;
+    }
+
+
+
+    /* Media queries for responsiveness */
+@media screen and (max-width: 1200px) {
+    .column {
+        flex: 50%; /* Single column for small screens */
+    }
+}
+
+</style>
+</head>
+<body>
+
+
+<div class="row">
+    <div class="column">
+        <img src="images/firstimg.avif" style="width: 705px; height: 300px;" >
+        <img src="images/girl-1.jpg" style="width: 270px; height: 300px;">
+        <img src="images/girl2.jpg" style="width: 525px; height: 300px;">
+        <img src="images/building.jpg" style="width: 350px;height: 87px; margin-top: 10px;">
+    </div>
+
+    <div class="column">
+        <img src="images/green.jpg" style="width: 510px; height: 300px; margin-top: 315px; margin-left: -110px;">
+        <img src="images/beach.jpg" style="width: 350px; height: 87px; margin-left: -30px;  margin-top: 319px;">
+    </div>
+
+    <div class="column">
+        <img src="images/mountain.jpg" style="width: 350px; height: 300px; margin-left: -60px;">
+        <img src="images/twosmiles.jpg" style="width: 270px; height: 300px; margin-left: 20px;">
+        <img src="images/eyes.jpg" style="width: 525px; height: 300px; margin-left: -240px;" >
+        <img src="images/city.jpg" style="width: 350px; height: 87px; margin-top: 10px; margin-left: -60px;">
+    </div>
+
+    <div class="textarea">
+        <h1>SHUTTER</h1>
+        <ul class="links">
+            <li style="color: red; margin-top: 50px;"></span>HOME</li>
+            <li style="margin-top: 30px;">PHOTOS</li>
+            <li  style="margin-top: 30px;">BIO</li>
+            <li  style="margin-top: 30px;">BLOG</li>
+            <li  style="margin-top: 30px;">CONTACT</li>
+        </ul>
+        <div class="icons">
+            <span class="fa fa-instagram" ></span>
+            <span class="fa fa-twitter"style="margin-left: 20px;"></span>
+            <span class="fa fa-facebook"style="margin-left: 20px;"></span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

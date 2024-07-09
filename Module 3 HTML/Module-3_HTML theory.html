@@ -1,0 +1,753 @@
+Are the HTML tags and elements the same thing?
+<!--
+    Both are the different things here is the details of HTML tags and Html elements:
+
+    ==>HTML Tags:
+        HTML tags are the building blocks of HTML markup.
+
+        They are used to define elements on a web page.
+
+        Tags are composed of angle brackets (< and >), and most tags come in pairs, with an opening tag and a closing tag.
+
+        Example of an opening tag: <p>
+        Example of a closing tag: </p>
+
+        Tags are not case-sensitive, but it's a common convention to write them in lowercase.
+
+
+    ==>HTML Elements:
+        An HTML element consists of an opening tag, content, and a closing tag.
+            
+        The content is the information placed between the opening and closing tags.
+            
+        Elements represent the structure of a document and define how content should be displayed or behave.
+
+        Example of an HTML element:
+        <p>This is a paragraph element.</p>
+            
+        In this example, <p> is the opening tag, This is a paragraph element. is the content, and </p> is the closing tag.
+
+        So, to summarize, a tag is a part of the HTML syntax, while an element is a complete unit that consists of an opening tag, content, and a closing tag. Elements are what make up the structure and content of an HTML document, and tags are used to define and create those elements.
+--> 
+
+
+2.What are tags and attributes in HTML?
+<!--
+    ==>Tags:
+
+        Tags are the building blocks of HTML and are used to define elements on a web page. They are enclosed in angle brackets (< >) and usually come in pairs, with an opening tag and a closing tag. The opening tag contains the name of the HTML element, and the closing tag has a forward slash (/) before the element name. The content is placed between the opening and closing tags.
+
+        Ex.: <p>This is a paragraph.</p>
+
+    ==>Attributes:
+
+        Attributes provide additional information about HTML elements and are always included in the opening tag. They are usually name-value pairs, separated by an equal sign (=). The attribute name comes before the equal sign, and the attribute value is placed in quotes.
+
+        Ex.: <a href="https://www.example.com">Visit Example.com</a>
+
+        In this example, href is the attribute name.
+        "https://www.example.com" is the attribute value. 
+        This <a> (anchor) tag creates a hyperlink to the specified URL.
+
+        Some common attributes include src (for specifying the source of an image or other media)
+
+-->
+
+
+3.What are void elements in HTML? With Example.
+<!--
+    Void elements in HTML are elements that do not have a closing tag. They are self-closing tags and do not contain any content. 
+    
+    In HTML, void elements are also known as empty elements or self-closing tags. Instead of having an opening tag, content, and a closing tag like regular elements, void elements consist only of a single tag.
+
+    The most common void elements in HTML include:
+    
+    Ex.: 
+
+    <img>: Represents an image.
+    <img src="example.jpg" alt="Example Image">
+
+    <br>: Represents a line break.
+    <p>This is a line of text.<br>This is a new line of text.</p>
+
+    <hr>: Represents a horizontal rule (line).
+    <p>Some content above the line.</p>
+    <hr>
+    <p>Some content below the line.</p>
+
+    <input>: Represents an input field.
+    <input type="text" name="username">
+
+    <meta>: Provides metadata about the HTML document.
+    <meta charset="UTF-8">
+
+    <link>: Defines a link to an external resource, such as a stylesheet.
+    <link rel="stylesheet" href="styles.css">
+
+    <base>: Specifies a base URL for all relative URLs in a document.
+    <base href="https://www.example.com/">
+
+    Since void elements cannot contain content or have a closing tag, they are closed with a trailing slash (/) before the closing angle bracket (>), like in the examples above. 
+
+-->
+
+
+4.What are HTML Entities? With Example.
+<!--
+    HTML entities are the reserved characters that are used in the HTML document. They are not present in your standard keyboard. They provide a wide range of characters, allowing you to add icons, geometric shapes, mathematical operators, and so on.
+
+    For example, certain characters, like <, >, &, have special meanings in HTML. 
+
+-->
+
+
+5.What are different types of lists in HTML? With Example.
+<!--
+    In HTML (Hypertext Markup Language), there are three main types of lists:
+    
+    1)Unordered list or Bulleted list (ul)
+    
+    2)Ordered list or Numbered list (ol)
+    
+    3)Description list or Definition list (dl)
+
+    1) Unordered Lists (<ul>):
+
+        Unordered lists are used to represent a list of items without any specific order or sequence.
+    
+        Each item in the list is marked with a bullet point or another unordered marker.
+    
+        The <ul> element is used to define an unordered list.
+
+        Ex.:
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+
+            This will be displayed as:
+            =>  Item 1
+            =>  Item 2
+            =>  Item 3
+
+
+    2) Ordered Lists (<ol>):
+
+        Ordered lists are used to represent a list of items in a specific order or sequence.
+
+        Each item in the list is marked with a number or another ordered marker.
+
+        The <ol> element is used to define an ordered list.
+        
+        Ex.:
+            <ol>
+              <li>First item</li>
+              <li>Second item</li>
+              <li>Third item</li>
+            </ol>
+
+            This will be displayed as:
+
+            =>  First item
+            =>  Second item
+            =>  Third item
+
+    3)Description list or Definition list (dl)
+    
+        Definition lists are used to represent a list of terms and their corresponding definitions.
+        
+        The <dl> element is used to define a definition list.
+        
+        The list is comprised of <dt> (definition term) elements for terms and <dd> (definition description) elements for their definitions.
+        
+        Ex.:
+            <dl>
+              <dt>Term 1</dt>
+              <dd>Definition 1</dd>
+              <dt>Term 2</dt>
+              <dd>Definition 2</dd>
+            </dl>
+
+            This will be displayed as:
+
+            Term 1
+            : Definition 1
+
+            Term 2
+            : Definition 2
+-->
+
+
+6.What is the 'class' attribute in HTML? With Example.
+<!--
+    In HTML, the class attribute is used to assign one or more class names to an HTML element. 
+    
+    The purpose of the class attribute is to apply styles and formatting to elements using CSS (Cascading Style Sheets) or to select and manipulate elements with JavaScript.
+
+    Here's an example of how the class attribute is used in an HTML element:
+    
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <style>
+      .note 
+      {
+        font-size: 120%;
+        color: red;
+      }
+      </style>
+
+      </head>
+      <body>
+
+      <h1>My <span class="note">Important</span> Heading</h1>
+      <p>This is some <span class="note">important</span> text.</p>
+
+      </body>
+      </html>
+
+-->
+
+7.What is the difference between the 'id' attribute and the 'class' attribute of HTML elements? With Example
+
+<!--
+
+    In HTML, both the 'id' and 'class' attributes are used to provide additional information about elements, but they serve different purposes.
+
+
+    In HTML, both the 'id' and 'class' attributes are used to provide additional information about elements, but they serve different purposes.
+
+    1.)id Attribute:
+
+        The 'id' attribute is used to uniquely identify a single HTML element on a page. Each 'id' within a document must be unique, meaning no two elements can have the same 'id'.
+
+        It is often used when you want to refer to a specific element through JavaScript or CSS.
+
+        The 'id' attribute is specified with the syntax id="your_unique_id".
+
+        Ex.:
+
+        <div id="header">
+            <h1>Welcome to my website</h1>
+        </div>
+
+        In this example, the 'id' attribute is used to uniquely identify the <div> element with the value "header".
+
+    2.) class Attribute:
+
+        The 'class' attribute is used to specify one or more class names for an HTML element. Multiple elements on a page can share the same class, and a single element can have multiple classes.
+
+        It is commonly used for styling multiple elements with the same styles or for selecting multiple elements with JavaScript.
+
+        The 'class' attribute is specified with the syntax class="class_name1 class_name2".
+
+        Ex.:
+
+        <p class="highlight">This is a highlighted paragraph.</p>
+        <p class="highlight">So is this one.</p>
+
+        In this example, both <p> elements share the same class, "highlight," and can be styled or selected collectively.
+
+        In summary, the 'id' attribute is used for unique identification of a single element, while the 'class' attribute is used to group multiple elements together and apply the same styles or perform operations on them collectively.
+
+-->     
+
+
+8.What are the various formatting tags in HTML?
+
+<!--
+    HTML includes various formatting tags that allow you to structure and style the content on a web page. Here are some common formatting tags in HTML:
+        
+        <b>: Bold text
+
+        <strong>: Strong importance (typically rendered as bold)
+
+        <i>: Italic text
+
+        <em>: Emphasized text (typically rendered as italic)
+
+        <u>: Underlined text
+
+        <s> or <strike>: Strikethrough text
+
+        <h1> to <h6>: Headings from level 1 (largest) to level 6 (smallest)
+
+        <p>: Paragraph
+        
+        <br>: Line break
+
+        <ul>: Unordered list
+
+        <ol>: Ordered list
+
+        <li>: List item
+
+        <hr>: Horizontal rule (line)
+
+        <sup>: Superscript
+        
+        <sub>: Subscript
+    
+        
+-->
+
+9.How is Cell Padding different from Cell Spacing? With Example.
+
+<!--
+
+    Cell padding and cell spacing are properties associated with HTML table elements. They are used to control the spacing and padding within and around the cells of a table.
+
+    1.) Cell Padding:
+    
+        Definition: Cell padding refers to the space between the content of a table cell and the cell's border.
+
+        HTML Attribute: It is set using the cellpadding attribute in the <table> tag.
+
+    Ex.:
+    <table cellpadding="10">
+    <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+    </tr>
+    </table>
+
+    In this example, the cellpadding is set to 10, so there will be a padding of 10 pixels between the content of each cell and the cell's border.
+
+    2.)Cell Spacing:
+
+    Definition: Cell spacing refers to the space between adjacent cells in a table.
+    
+    HTML Attribute: It is set using the cellspacing attribute in the <table> tag.
+    
+    Ex.:
+    <table cellspacing="5">
+    <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+    </tr>
+    </table>
+
+    In this example, the cellspacing is set to 5, so there will be a spacing of 5 pixels between the borders of adjacent cells.
+
+    Combined Example:
+
+    <table cellpadding="10" cellspacing="5">
+    <tr>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+    </tr>
+    <tr>
+        <td>Cell 3</td>
+        <td>Cell 4</td>
+    </tr>
+    </table>
+
+    In this combined example, each cell will have a padding of 10 pixels, and there will be a spacing of 5 pixels between the borders of adjacent cells.
+
+    In summary, cell padding affects the space between the content of a cell and its border, while cell spacing affects the space between the borders of adjacent cells in a table.
+
+-->
+
+10.How can we club two or more rows or columns into a single row or column in an HTML
+table? With Example.
+
+<!--
+
+    In HTML tables, you can use the rowspan and colspan attributes to merge two or more rows or columns into a single row or column, respectively. These attributes are applied to the <td> (table cell) or <th> (table header) elements.
+
+    Merging Rows (rowspan):
+    
+    To merge two or more rows into a single row, use the 'rowspan' attribute. The rowspan attribute specifies how many rows a cell should span.
+
+    <table border="1">
+      <tr>
+        <td rowspan="2">Merged Row 1</td>
+        <td>Cell 1</td>
+        <td>Cell 2</td>
+      </tr>
+      <tr>
+
+    #This cell is part of the merged row
+
+        <td>Cell 3</td>
+        <td>Cell 4</td>
+    </tr>
+    <tr>
+      <td>Row 2</td>
+      <td>Cell 5</td>
+      <td>Cell 6</td>
+    </tr>
+    </table>
+
+    In this example, the first cell in the first column spans two rows using rowspan="2". This results in the appearance of a merged row.
+
+    Merging Columns (colspan):
+
+    To merge two or more columns into a single column, use the colspan attribute. The colspan attribute specifies how many columns a cell should span.
+
+    Ex.:
+
+    <table border="1">
+      <tr>
+        <td colspan="2">Merged Column 1</td>
+        <td>Cell 1</td>
+      </tr>
+      <tr>
+            These cells are part of the merged column
+        <td>Cell 2</td>
+        <td>Cell 3</td>
+        <td>Cell 4</td>
+      </tr>
+      <tr>
+        <td>Row 2</td>
+        <td>Cell 5</td>
+        <td>Cell 6</td>
+      </tr>
+    </table>
+
+    In this example, the first cell in the first row spans two columns using colspan="2". This results in the appearance of a merged column.
+
+    These attributes (rowspan and colspan) provide a way to structure HTML tables more flexibly by merging cells to create more complex layouts.
+
+-->
+
+11.What is the difference between a block-level element and an inline element?
+<!--
+
+    The distinction between block-level elements and inline elements is an important concept in HTML and CSS, as it affects how elements are displayed on a web page.
+
+    1.)Block-level elements:
+
+    Definition: Block-level elements are elements that, by default, start on a new line and take up the full width available, extending the entire width of 
+    their containing element.
+   
+    Display Property: They have a display property set to "block" by default.
+    
+    Examples: <div>, <p>, <h1> to <h6>, <ul>, <li>, <table>, <form>, etc.
+    
+    Behavior: Block-level elements create a "block" or a "box" in the document flow. They are often used for structural elements and page layout.
+
+    2.)Inline elements:
+
+    Definition: Inline elements do not start on a new line, and they only take up as much width as necessary. They do not force a new line after the element.
+
+    Display Property: They have a display property set to "inline" by default.
+
+    Examples: <span>, <a>, <strong>, <em>, <img>, <br>, <input>, etc.
+
+    Behavior: Inline elements flow within the content and do not create a new block. They are often used for text-level semantics and styling specific parts of the content.
+
+    Understanding the distinction between block-level and inline elements is crucial for effective HTML and CSS layout and styling. Additionally, the display behavior of elements can be altered using CSS properties, allowing for more flexible designs.
+
+-->
+
+12.How to create a Hyperlink in HTML? With Example.
+
+<!--
+
+    Creating a hyperlink in HTML is done using the <a> (anchor) element. The <a> element is used to define a hyperlink, and it can link to different types of resources, including other web pages, files, or email addresses.
+    
+    Here's a basic example of how to create a hyperlink in HTML:
+
+    <a href="https://www.example.com">Visit Example.com</a>
+
+    <a href="mailto:info@example.com">Send Email</a>
+
+
+    The <a> element is used to create a hyperlink.
+    
+    The href attribute specifies the destination URL to which the link points. In this case, it's set to "https://www.example.com."
+    
+    The text between the opening <a> tag and the closing </a> tag is the visible text for the link. In this case, it says "Visit Example.com."
+
+-->
+
+
+13.What is the use of an iframe tag? With Example.
+<!--
+
+    The <iframe> (inline frame) tag in HTML is used to embed another HTML document within the current document. It allows you to include content from another source, such as a web page, into the body of your HTML document. <iframe> is often used for embedding videos, maps, or other external content.
+
+    Here's a basic example of how to use the <iframe> tag:
+
+    <iframe src="https://www.example.com" width="600" height="400" frameborder="0" allowfullscreen></iframe>
+
+    The <iframe> tag is used to create an inline frame.
+
+    The src attribute specifies the URL of the content you want to embed. In this case, it's set to "https://www.example.com."
+
+    The width and height attributes set the dimensions of the iframe.
+
+    The frameborder="0" attribute removes the border around the iframe.
+
+    The allowfullscreen attribute allows the content to be displayed in fullscreen mode if applicable.
+
+    In summary, the <iframe> tag is used to embed external content within an HTML document, providing a way to integrate and display content from other sources.
+
+-->
+
+14.What is the use of a span tag? Explain with example.
+
+<!--
+    The <span> tag in HTML is an inline-level element that is used to apply styles or scripting to a specific portion of text within a larger block of content. It is a generic container that doesn't have any specific semantic meaning on its own but is often used in conjunction with CSS styles or JavaScript to target and manipulate specific parts of the document.
+
+        Here's an example of how the <span> tag can be used:
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Span Tag Example</title>
+            <style>
+                /* Example of applying styles to the text inside a span */
+                .highlight 
+                {
+                    color: red;
+                    font-weight: bold;
+                }
+            </style>
+        </head>
+        <body>
+        
+            <h1>This is a <span class="highlight">highlighted</span> word.</h1>
+        
+            <p>Another example with <span style="text-decoration: underline;">underlined</span> text.</p>
+        
+        </body>
+        </html>
+
+    The first <span> is given a class attribute with the value "highlight." In the <style> section, there is a CSS rule that defines styles for the class "highlight." This allows you to apply specific styles to the text within the <span> element.
+
+    The second <span> uses an inline style attribute to apply an underline to the text inside it. While the first example uses an external style, this one demonstrates how you can apply styles directly to the span using the style attribute.
+-->
+
+
+15.How to insert a picture into a background image of a web page? With Example.
+
+<!--
+We can use the background attribute in the body tag to set an image as the background of the webpage. 
+
+We will need to specify the URL or the location of the image which we want to set to the background attribute of the body tag.
+
+Ex.:
+
+<body background = "URL or Path of Image">Body of the Webpage</body>
+
+
+-->
+
+
+16.How are active links different from normal links?
+<!--
+Websites are designed to point you to different resources.You can move from one website to another through links. Links help you to get information from different resources. Links are established in simple HTML web pages through <a> tag.
+
+Links are categorized into three types. Typically a Link is displayed in three different colors based on the usage.
+
+  1  Normal links (Unvisited links)
+  2  Active links
+  
+
+1. Normal Links:
+
+These are links that have not been interacted with by the user.
+
+They are typically styled with the default link appearance, often blue text with an underline.
+
+You can define the default styles for links using CSS.
+    Ex.:
+
+    <a href="https://www.example.com">Normal Link</a>
+
+
+2. Active Links:
+
+Active links refer to links that are currently being interacted with by the user.
+
+For example, when a user clicks on a link, the link enters the "active" state.
+
+You can style active links differently using the '':active' pseudo-class in CSS.
+
+    Ex.:
+
+    a:active {
+      color: red; /* Change text color to red when link is active (clicked) */
+    }
+
+Additionally, there is a "visited" state for links that have been clicked by the user. You can style visited links using the :visited pseudo-class.
+
+    Ex.:
+
+    a:visited {
+      color: purple; /* Change text color to purple for visited links */
+    }
+   
+-->
+
+17.What are the different tags to separate sections of text?
+
+<!--
+    In HTML, there are several tags that you can use to separate sections of text and apply different meanings or styles to those sections. Here are some commonly used tags for this purpose:
+
+    Paragraphs (<p>):
+
+    Headings (<h1> to <h6>):
+
+    Divisions (<div>):
+
+    Sections (<section>):
+
+    Spans (<span>):
+
+    Lists (<ul>, <ol>, <li>):
+
+    These tags provide semantic meaning to different parts of the text and help in structuring the content of an HTML document. The choice of tag depends on the specific meaning or purpose of the content you are marking up.
+
+-->
+
+
+18.What is SVG?
+<!--
+    SVG (Scalable Vector Graphics) is an XML-based vector image format for describing two-dimensional vector graphics. It is designed to be scalable and is commonly used for creating graphics that can be scaled to different sizes without losing quality. SVG images can be created and edited with any text editor, as they consist of plain text.
+
+    EX.:
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+    </head>
+    <body>
+
+        <svg width="200" height="200" >
+            <rect width="100" height="100" x="50" y="50" fill="pink" stroke-width="5" stroke="black" />
+        </svg>
+
+        <br><br>
+
+        <svg width="400" height="400">
+            <circle cx="200" cy="200" r="80" fill="pink" stroke-width="5" stroke="black" />
+        </svg>
+    </body>
+    </html>
+
+    This SVG code draws a red circle with a black border on a 100x100 canvas. The <circle> element represents the circle, and attributes like cx (center x-coordinate), cy (center y-coordinate), and r (radius) define the circle's characteristics.
+
+
+    -->
+
+
+19.What is difference between HTML and XHTML?
+
+<!--
+
+HTML (Hypertext Markup Language) and XHTML (Extensible Hypertext Markup Language) are both markup languages used to structure content on the web. 
+
+While they share similarities, there are key differences in syntax and rules. It's important to note that XHTML is an XML-based reformulation of HTML, and it was designed to be more extensible and compatible with XML tools.
+
+Here are some of the main differences between HTML and XHTML:
+
+1.Syntax:
+
+HTML: HTML has a more lenient syntax, and it is forgiving of errors. It allows certain syntax shortcuts and does not require strict adherence to XML rules.
+
+XHTML: XHTML follows a stricter syntax based on XML rules. It requires well-formed documents with properly nested elements and attributes. Tags must be properly closed, and attribute values must be enclosed in quotes.
+
+2.Document Structure:
+
+HTML: In HTML, the document structure is generally more forgiving. Elements like <html>, <head>, and <body> are often implied and can be omitted without causing issues in most browsers.
+
+XHTML: In XHTML, documents must follow a more strictly defined structure. All documents must have a complete structure, including an explicit declaration, <html>, <head>, and <body> elements.
+
+3.Tag and Attribute Naming:
+
+HTML: HTML is case-insensitive when it comes to tag and attribute names. Both uppercase and lowercase letters are accepted.
+
+XHTML: XHTML is case-sensitive. Tag and attribute names must be written in lowercase.
+
+4.Self-Closing Tags:
+
+HTML: In HTML, certain tags like <br>, <img>, and <hr> can be self-closing (e.g., <br> or <br /> is acceptable).
+
+XHTML: In XHTML, self-closing tags must use the XML-style syntax with a space and a forward slash before the closing angle bracket (e.g., <br />).
+
+5.Error Handling:
+
+HTML: HTML is more forgiving of errors. Browsers often attempt to render the page even if there are syntax errors, and missing closing tags may not cause rendering issues.
+
+XHTML: XHTML is less forgiving. Even minor syntax errors can cause the browser to stop rendering the page. Developers need to ensure well-formed documents to avoid issues.
+
+6.Media Type:
+
+HTML: HTML documents are typically served with the media type text/html.
+XHTML: XHTML documents are served with the media type application/xhtml+xml. This stricter media type is required for proper processing of XHTML documents.
+
+
+-->
+
+
+20.What are logical and physical tags in HTML?
+
+<!--
+    Physical tags: 
+    
+    Physical tags are used to indicate that how specific characters are to be formatted or indicated using HTML tags. 
+    
+    Any physical style tag may contain any item allowed in text, including conventional text, images, line breaks, etc. 
+    
+    Physical tags can only be used for styling purposes for specific elements. 
+    
+    Although each physical tag has a defined style, you can override that style by defining your own look for each tag. 
+    
+    All physical tags require ending tags.  
+
+    <sup>
+    <sub>     
+    <b>     
+    <i> 
+
+    Logical Tags: 
+    
+    Logical tags are used to tell the browser what kind of text is written inside the tags. 
+    
+    Logical tags are also known as Structural tags because they specify the structure of the document. 
+    
+    Logical tags are used to indicate to the visually impaired person that there is something more important in the text or to emphasize the text ie, logical tags can be used for styling purposes as well as to give special importance to text content. 
+
+    <abbr> 
+    <address>     
+    <cite> 
+    <strong> 
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

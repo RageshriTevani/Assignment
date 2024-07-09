@@ -1,0 +1,497 @@
+<!-- (Array and object Question) -->
+Q.40 Write a JavaScript Program to display the current day and time in the following format. 
+Sample Output: Today is Friday. Current Time is 12 PM: 12 : 22 2 ?
+<script>
+// Get the current date and time
+var today = new Date();
+
+// Get the day of the week (0-6, where 0 is Sunday and 6 is Saturday)
+var day = today.getDay();
+
+// Array of day names
+var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// Display the current day
+console.log("Today is: " + daylist[day] + ".");
+
+// Get the current hour, minute, and second
+var hour = today.getHours();
+var minute = today.getMinutes();
+var second = today.getSeconds();
+
+// Determine if it's AM or PM
+var prepand = (hour >= 12) ? " PM" : " AM";
+
+// Convert 24-hour format to 12-hour format
+hour = (hour >= 12) ? hour - 12 : hour;
+
+// Check for special cases when hour is 0
+if (hour === 0 && prepend === ' PM') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepend = ' Noon';
+    } else {
+        hour = 12;
+        prepend = ' PM';
+    }
+}
+
+// Check for special cases when hour is 0
+if (hour === 0 && prepand === ' AM') {
+    if (minute === 0 && second === 0) {
+        hour = 12;
+        prepend = ' Midnight';
+    } else {
+        hour = 12;
+        prepand = ' AM';
+    }
+}
+
+// Display the current time
+console.log("Current Time: " + hour + prepend + " : " + minute + " : " + second);
+</script>
+
+
+
+
+
+
+Q.41 Write a JavaScript program to get the current date? 
+<script>
+    var today_date = new Date();
+console.log(today_date);
+
+</script>
+
+
+
+Q.42 Write a JavaScript program to compare two objects.
+
+<!-- 1. Equality (===):
+This compares the references of the objects. If the references point to the same object, it returns true; otherwise, it returns false.
+-->
+<script>
+const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 1, b: 2 };
+console.log(obj1 === obj2); // false (different references)
+
+</script>
+
+
+Q.43 Write a JavaScript program to convert an array of objects into CSV string? 
+<!-- First, create your array of objects. For example:
+-->
+<script>
+    const itemsArray = [
+    { itemId: 1, itemRef: "Item 001" },
+    { itemId: 2, itemRef: "Item 002" },
+    { itemId: 3, itemRef: "Item 003" }
+];
+
+const csvString = [
+    ["Item ID", "Item Reference"],
+    ...itemsArray.map(item => [item.itemId, item.itemRef])
+];
+
+const finalCsvString = csvString.map(row => row.join(",")).join("\n");
+
+// "Item ID,Item Reference
+// 1,Item 001
+// 2,Item 002
+// 3,Item 003"
+
+</script>
+
+
+Q.44 Write a JavaScript program to capitalize first letter of a string 
+<script>
+    function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Example usage:
+const inputString = "this is a test";
+const capitalizedString = capitalizeFirstLetter(inputString);
+console.log(capitalizedString); // Output: "This is a test"
+
+</script>
+
+
+
+
+Q.45 Write a JavaScript program to determine if a variable is array
+
+<script> 
+// 1. Using instanceof:
+const myArray = [1, 2, 3];
+const isAnArray = myArray instanceof Array;
+console.log(isAnArray); // Output: true
+
+// Using Array.isArray():
+const anotherArray = ["apple", "banana", "cherry"];
+const isArray = Array.isArray(anotherArray);
+console.log(isArray); // Output: true
+
+// Using variable.constructor === Array:
+const yetAnotherArray = [true, false];
+const isArrayByConstructor = yetAnotherArray.constructor === Array;
+console.log(isArrayByConstructor); // Output: true
+
+// Using Object.prototype.toString.call(variable) === '[object Array]':
+const oneMoreArray = ["dog", "cat"];
+const isArrayByToString = Object.prototype.toString.call(oneMoreArray) === '[object Array]';
+console.log(isArrayByToString); // Output: true
+
+</script>
+
+
+
+
+
+Q.46 Write a JavaScript program to clone an array
+<script>
+    // Using the slice() Method: The slice() method creates a shallow copy of an array. It returns a new array containing a subset of the elements from the original array. Here’s an example:
+const originalArray = [1, 2, 3];
+const clonedArray = originalArray.slice();
+console.log(clonedArray); // Output: [1, 2, 3]
+
+// Using the Spread Operator (...): The spread operator is concise and widely used for cloning arrays. It expands an array into individual elements, allowing you to create a new array. Example:
+
+// const originalArray = [1, 2, 3];
+// const clonedArray = [...originalArray];
+// console.log(clonedArray); // Output: [1, 2, 3]
+
+// Using Array.from(): The Array.from() method creates a new array from an existing one. You can also provide an optional mapping function to transform values in the new array:
+
+// const originalArray = [1, 2, 3];
+// const clonedArray = Array.from(originalArray);
+// console.log(clonedArray); // Output: [1, 2, 3]
+
+</script>
+
+
+
+
+
+Q.47 What is the drawback of declaring methods directly in JavaScript objects
+<!-- When multiple instances of an object are created using the same class, each instance requires a new copy of the method if it’s defined directly within the constructor.
+
+Assigning methods to this (inside the constructor) makes inheritance less convenient.
+
+If you return an object literal from the constructor (without using new), it’s not a true constructor.
+-->
+
+
+
+
+
+Q.48 Print the length of the string on the browser console using console.log()? 
+<script>
+const myString = "Hello, world!";
+console.log("Length of the string:", myString.length);
+
+</script>
+
+
+
+
+Q.49 Change all the string characters to capital letters using toUpperCase() method? 
+<script>
+// const originalString = "hello, world!";
+// const capitalizedString = originalString.toUpperCase();
+
+// console.log("Capitalized string:", capitalizedString);
+
+</script>
+
+
+
+
+
+Q.50 What is the drawback of declaring methods directly in JavaScript objects
+<!--  When multiple instances of an object are created using the same class, each instance requires a new copy of the method if it’s defined directly within the constructor.
+
+Assigning methods to this (inside the constructor) makes inheritance less convenient.
+
+If you return an object literal from the constructor (without using new), it’s not a true constructor.-->
+
+
+
+
+
+
+Q.51 Write a JavaScript program to get the current date. Expected Output : mm-dd-yyyy, 
+mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+<script>
+    const today = new Date();
+const dd = String(today.getDate()).padStart(2, '0');
+const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+const yyyy = today.getFullYear();
+
+// Format options
+const format1 = mm + '-' + dd + '-' + yyyy; // mm-dd-yyyy
+const format2 = mm + '/' + dd + '/' + yyyy; // mm/dd/yyyy
+const format3 = dd + '-' + mm + '-' + yyyy; // dd-mm-yyyy
+const format4 = dd + '/' + mm + '/' + yyyy; // dd/mm/yyyy
+
+console.log(`mm-dd-yyyy: ${format1}`);
+console.log(`mm/dd/yyyy: ${format2}`);
+console.log(`dd-mm-yyyy: ${format3}`);
+console.log(`dd/mm/yyyy: ${format4}`);
+
+</script>
+
+
+
+
+
+Q.52 Use indexOf to determine the position of the first occurrence of a in 30 Days Of JavaScript? 
+
+<script>
+const text = "30 Days Of JavaScript";
+const position = text.indexOf("a");
+
+console.log(`The first occurrence of "a" is at position ${position}.`);
+
+</script>
+
+
+
+
+Q,53 Use lastIndexOf to determine the position of the last occurrence of a in 30 Days Of JavaScript? 
+<script>
+// const text = "30 Days Of JavaScript";
+// const position = text.lastIndexOf("a");
+
+// console.log(`The last occurrence of "a" is at position ${position}.`);
+
+</script>
+
+
+
+
+Q.54 Form Validtion in JS? 
+
+
+
+
+
+
+Q.55 Form in Email, number, Password, Validation?
+
+
+
+
+
+Q.56 Dynamic Form Validation in JS? 
+
+
+
+
+Q.57 how many type of JS Event? How to use it ? 
+<!--  Mouse Events:
+
+click: Triggered when an element is clicked.
+mouseover: Fired when the mouse pointer enters an element.
+mouseout: Occurs when the mouse pointer leaves an element.
+mousedown and mouseup: Fired when the mouse button is pressed down and released, respectively.
+
+Keyboard Events:
+
+keydown: Triggered when a key is pressed down.
+keyup: Fired when a key is released.
+keypress: Occurs when a key is pressed and released (useful for alphanumeric keys).
+
+Form Events:
+
+submit: Fired when a form is submitted.
+change: Triggered when the value of an input field changes (e.g., text input, dropdown selection).
+focus and blur: Occur when an input field gains and loses focus, respectively.
+
+Window Events:
+
+load: Fired when the page finishes loading.
+unload: Occurs when the page is closed or navigated away from.
+resize: Triggered when the browser window is resized.
+
+To use these events, you can:
+
+Add event handler attributes directly in HTML elements (e.g., onclick, onchange).
+Call JavaScript functions from these attributes (e.g., <button onclick="myFunction()">Click me</button>).
+Assign custom event handler functions to elements using JavaScript (e.g., element.addEventListener('click', myFunction)).-->
+
+
+
+
+Q.59 What is Bom vs Dom in JS? 
+<!--  
+    In JavaScript, "BOM" and "DOM" refer to two different APIs that are fundamental to web development. Here's a brief explanation of each:
+
+BOM (Browser Object Model):
+The Browser Object Model allows JavaScript to interact with the browser.
+Represents the browser window and is the global object for JavaScript running in the browser.
+Provides information about the browser and the operating system.
+Contains information about the user's screen.
+Provides access to the browser's session history (pages visited in the tab or frame).-->
+<script>
+       // Redirect the browser to a new URL
+window.location.href = 'https://www.example.com';
+
+// Alert box
+window.alert('Hello, World!');
+
+// Check browser information
+console.log(navigator.userAgent);
+</script>
+
+
+<!-- DOM (Document Object Model):
+The Document Object Model is a programming interface for HTML and XML documents.
+It represents the page so that programs can change the document structure, style, and content.
+Represents the entire HTML or XML document and serves as the entry point into the DOM.
+Represents an element in the document, such as <div>, <p>, etc.
+Methods like getElementById(), querySelector(), createElement(), and appendChild() are used to interact with the document.-->
+<script>
+
+// Change the content of an element
+document.getElementById('myElement').innerText = 'New Content';
+
+// Create a new element and append it to the document
+const newDiv = document.createElement('div');
+newDiv.innerHTML = 'Hello, World!';
+document.body.appendChild(newDiv);
+
+// Select elements with a specific class
+const elements = document.querySelectorAll('.myClass');
+elements.forEach(element => element.style.color = 'red');
+
+</script>
+
+
+
+Q.60 Array vs object defences in JS? 
+<!--Arrays
+
+An array is an ordered collection of values, which can be of any type. Arrays are used to store multiple values in a single variable. -->
+<script>
+    let array = [element1, element2, element3];
+
+// Elements are accessed via their index, starting from 0.
+// Arrays have a length property that reflects the number of elements in the array.
+// Arrays come with a variety of built-in methods for operations such as adding, removing, or iterating over elements (e.g., push(), pop(), shift(), unshift(), forEach(), map(), filter(), reduce()).
+
+let fruits = ['apple', 'banana', 'cherry'];
+console.log(fruits[1]); // Output: 'banana'
+fruits.push('date'); // Adds 'date' to the end of the array
+
+</script>
+
+<!-- Objects
+An object is a collection of key-value pairs, where the keys are strings (or Symbols) and the values can be of any type.
+-->
+<script>
+    let object = {
+        key1: value1,
+        key2: value2
+    };
+// Does not guarantee the order of properties. In modern JavaScript (ES6 and beyond), properties are iterated in the order of their insertion but this is not guaranteed in all cases.
+let person = {
+    name: 'John Doe',
+    age: 30,
+    greet: function() {
+        console.log('Hello, ' + this.name);
+    }
+};
+console.log(person.name); // Output: 'John Doe'
+person.greet(); // Output: 'Hello, John Doe'
+
+</script>
+
+
+
+
+Q.61 Split the string into an array using split() Method
+<script>
+// let str = "apple,banana,cherry";
+// let fruits = str.split(",");
+// console.log(fruits); // Output: ["apple", "banana", "cherry"]
+
+// let str = "one-two-three-four";
+// let parts = str.split("-");
+// console.log(parts); // Output: ["one", "two", "three", "four"]
+
+
+let str = "hello";
+let characters = str.split("");
+console.log(characters); // Output: ["h", "e", "l", "l", "o"]
+
+</script>
+
+
+
+
+Q.62 Check if the string contains a word Script using includes() method?
+<script>
+// let str = "JavaScript is a versatile language.";
+// let containsScript = str.includes("Script");
+
+// console.log(containsScript); // Output: true
+
+</script>
+
+
+
+
+Q.63 Change all the string characters to lowercase letters using toLowerCase() Method. 
+<script>
+//     let str = "HELLO WORLD";
+// let lowerCaseStr = str.toLowerCase();
+// console.log(lowerCaseStr); // Output: "hello world"
+function convertToLowerCase(input) {
+    return input.toLowerCase();
+}
+
+let result = convertToLowerCase("Convert THIS String!");
+console.log(result); // Output: "convert this string!"
+
+</script>
+
+
+
+
+Q.64 What is Character at index 15 in 30 Days of JavaScript string? Use charAt() method. 
+<script>
+//     let str = "30 Days of JavaScript";
+// let charAt15 = str.charAt(15);
+
+// console.log(charAt15); // Output: "S"
+
+</script>
+
+
+
+Q.65 copy to one string to another string in JS?
+<script>
+let originalString = "Hello, World!";
+let copiedString = originalString;
+
+console.log(copiedString); // Output: "Hello, World!"
+
+</script>
+
+
+
+
+Q.66 Find the length of a string without using libraryFunction?
+<script>
+// let str = "Hello, World!";
+// let length = 0;
+
+// for (let i = 0; str[i] !== undefined; i++) {
+//     length++;
+// }
+
+// console.log(length); // Output: 13
+
+</script>

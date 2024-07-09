@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        #marksheet{
+            width: 500px;
+            height: 500px;
+            font-size: 18px;
+            margin-left: 450px;
+            margin-top: 35px;
+            padding: 40px;
+            border: 2px black solid;
+        }
+
+        .content h1{
+            font-size: 25px;
+        }
+        .content h2{
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+        }
+
+        label{
+            float: left;
+            font-size: 18px;
+        }
+
+        input[type=marks]{
+            width: 250px;
+            float: right;
+            padding: 5px;
+        }
+
+        .final{
+            display: inline;
+        }
+
+        .final input[type=totalmarks]{
+            border: none;
+            width: 25px;
+            font-size: 14px;
+        }
+
+        .percentage{
+            float: right;
+        }
+        
+        .percentage input[type=percentage]{
+            border: none;
+            width: 45px;
+            font-size: 14px;
+        }
+
+        button{
+            width: 100px;
+            padding: 10px;
+            margin-left: 240px;
+        }
+    </style>
+</head>
+<body>
+    <section id="marksheet">
+        <div class="content">
+            <h1>Marksheet for Information Technology</h1>
+            <h2>Enter Marks</h2>
+            <br>
+            <label>1. C Language </label>
+            <input type="marks" name="number" placeholder="" id="sub1">
+            <br><br>
+            <label>2. C++ Language</label>
+            <input type="marks" name="number" placeholder="" id="sub2">
+            <br><br>
+            <label>3. Database</label>
+            <input type="marks" name="number" placeholder="" id="sub3">
+            <br><br>
+            <label>4. HTML</label>
+            <input type="marks" name="number" placeholder="" id="sub4">
+            <br><br>
+            <label>5. CSS</label>
+            <input type="marks" name="number" placeholder="" id="sub5">
+            <br><br>
+            <label>6. php</label>
+            <input type="marks" name="number" placeholder="" id="sub6">
+            <br><br>
+            <label>7. Core java</label>
+            <input type="marks" name="number" placeholder="" id="sub7">
+            <br><br><br>
+        </div>
+
+        <button type="button" id="btn" value="Result" onclick="finalResult()">Result</button>
+        <br><br>
+
+        <div class="final">
+            <label>Total is: </label>
+            <input type="totalmarks" name="number" value="" id="total marks" >/350
+        </div>
+
+        <div class="percentage">
+            <label>Percentage is: </label>
+            <input type="percentage" name="number" value="" id="total per" >%
+        </div>
+        <script>
+            function finalResult() {
+            const totalMarks = document.getElementById('total marks');
+
+            const totalPer = document.getElementById('total per');
+
+            const total = parseInt(sub1.value) + parseInt(sub2.value) + parseInt(sub3.value) + parseInt(sub4.value) + parseInt(sub5.value) + parseInt(sub6.value) + parseInt(sub7.value);
+
+            totalMarks.value = total;
+            const percentage = (total / 350) * 100;
+            totalPer.value = percentage.toFixed(2);
+            }           
+        </script>
+    </body>
+    </html>

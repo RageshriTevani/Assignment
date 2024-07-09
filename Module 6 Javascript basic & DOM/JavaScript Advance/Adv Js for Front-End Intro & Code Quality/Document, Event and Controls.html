@@ -1,0 +1,526 @@
+<!-- ● Create a program to hide/show the password -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <label for="password">Password:</label>
+<input type="password" id="password" value="Hey">
+<button id="toggle">Show Password</button>
+
+<script>
+    const passwordInput = document.getElementById('password');
+
+    const toggleButton = document.getElementById('toggle');
+
+toggleButton.addEventListener('click', () => {
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleButton.textContent = 'Hide Password';
+    } else {
+        passwordInput.type = 'password';
+        toggleButton.textContent = 'Show Password';
+    }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+<!-- ● Create a program that will select all the classes and loop over and whenever i click the button the alert should show -->
+
+<div class="myClass">Element 1</div>
+<div class="myClass">Element 2</div>
+<div class="myClass">Element 3</div>
+<button id="alertButton">Alert Elements</button>
+<script>
+const alertButton = document.getElementById('alertButton');
+const elements = document.querySelectorAll('.myClass');
+
+alertButton.addEventListener('click', () => {
+    elements.forEach((element) => {
+        alert(element.textContent);
+    });
+});
+</script>
+
+
+
+
+<!-- ● Create a responsive header using proper JavaScript -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Responsive Header</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* Some basic styling for demonstration */
+        body
+        {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        header
+        {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        /* Style for the responsive header */
+        .responsive-header
+        {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        /* Style for the collapsed header */
+        .collapsed-header
+        {
+            background-color: #d28585;
+            color: #000000;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="responsive-header">
+        <h1>Responsive Header</h1>
+    </header>
+
+    <script>
+        // Function to toggle header class based on window width
+        function toggleHeaderClass()
+        {
+            const header = document.getElementById('header');
+            const screenWidth = window.innerWidth;
+        
+            if (screenWidth <= 768)
+            {
+                header.classList.remove('responsive-header');
+                header.classList.add('collapsed-header');
+            }
+            else
+            {
+                header.classList.remove('collapsed-header');
+                header.classList.add('responsive-header');
+            }
+        }
+        
+        // Initial call to toggleHeaderClass function
+        toggleHeaderClass();
+        
+        // Add event listener to resize event
+        window.addEventListener('resize', toggleHeaderClass);
+    </script>
+</body>
+</html>
+
+
+
+<!-- ● Create a form and validate using JavaScript -->
+<!-- Create a form and validate using JavaScript -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* Some basic styling for demonstration */
+        body
+        {
+            font-family: Arial, sans-serif;
+        }
+        form
+        {
+            max-width: 300px;
+            margin: 0 auto;
+            margin-top: 3%;
+            margin-bottom: 3%;
+        }
+        .main
+        {
+            border: 3px solid;
+            padding: 20px;
+            margin: auto;
+            margin-top: 3%;
+            width: 30%;
+            background-color: lightblue;
+        }
+        input
+        {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        button
+        {
+            background-color: lightpink;
+            border: 2px solid black;
+            padding: 8px;
+            font-size: medium;
+            font-weight: bold;
+            box-shadow: 4px 4px 4px #f5f3f3;
+            cursor: pointer; /* displays a hand */
+            margin-top: 5px;
+            margin-left: 38%;
+        }
+        .error-message
+        {
+            color: red;
+            font-size: 14px;
+        }
+        h1
+        {
+            text-align: center;
+            text-shadow: 2px 2px 2px #f5f3f3;
+            margin-top: 8%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Vaidate using JavaScript</h1>
+    <section class="main">
+        <form id="myForm" onsubmit="validateForm(event)">
+            <input type="text" id="name" placeholder="Enter your surname" required>
+            <div id="surname" class="error-message"></div>
+        
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <div id="nameError" class="error-message"></div>
+        
+            <input type="number" id="name" placeholder="Enter your contact Number" required>
+            <div id="contactError" class="error-message"></div>
+        
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <div id="emailError" class="error-message"></div>
+        
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+<script>
+function validateForm(event)
+    {
+            // Prevent the form from submitting
+        event.preventDefault();
+
+            // Get form inputs
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+
+            // Get error message elements
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+
+            // Reset error messages
+        nameError.textContent = '';
+        emailError.textContent = '';
+
+            // Validate name
+        if (nameInput.value.trim() === '')
+            {
+                nameError.textContent = 'Name is required';
+                return false;
+            }
+
+            // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailInput.value.trim()))
+            {
+                emailError.textContent = 'Invalid email address';
+                return false;
+            }
+    // If everything is valid, submit the form
+    alert('Form submitted successfully!');
+    }
+</script>
+
+</body>
+</html>
+
+
+<!-- ● Create a modal box using css and Js with three buttons -->
+<!-- Create a modal box using css and Js with three buttons -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Modal Box</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* Style the modal container */
+        .modal
+        {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        /* Style the overlay */
+        .overlay
+        {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+            z-index: 1;
+        }
+        /* Style the close button */
+        .btn-close
+        {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.5rem 0.7rem;
+            background: #eee;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        /* Style the buttons */
+        .btn-open
+        {
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 15px;
+            margin-left: 40%;
+            margin-top: 10%;
+            border: none;
+        }
+        .btn-primary
+        {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+        }
+        .btn-secondary
+        {
+            background-color: #999;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+        }
+        /* Hide the modal and overlay by default */
+        .hidden
+        {
+            display: none;
+        }
+        </style>
+</head>
+<body>
+<!-- The modal container -->
+    <section class="modal hidden">
+<!-- Modal content -->
+        <div class="modal-content">
+            <div class="flex">
+                <img src="https://i.pinimg.com/originals/5f/7c/31/5f7c311c35fcbba707361a3e724f5115.gif" width="80%" height="200px" style="margin-left: 10%;" alt="user" />
+                <button class="btn-close">⨉</button>
+            </div>
+            <div>
+                <h3>Stay in touch</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit fugit consectetur earum aliquid repudiandae nemo distinctio, soluta eos odio praesentium vitae ut fugiat. Illo enim modi excepturi debitis, veritatis eaque?</p>
+            </div>
+        <!-- Three buttons -->
+            <button class="btn btn-primary">Subscribe</button>
+            <button class="btn btn-secondary">Cancel</button>
+        </div>
+    </section>
+<!-- The overlay -->
+    <div class="overlay hidden"></div>
+<!-- The button to open the modal -->
+    <button class="btn btn-open">Open Modal</button>
+
+<script>
+    // Get the modal, overlay, and open button elements
+        const modal = document.querySelector('.modal');
+        const overlay = document.querySelector('.overlay');
+        const openModalBtn = document.querySelector('.btn-open');
+        const closeModalBtn = document.querySelector('.btn-close');
+        const cancelModalBtn = document.querySelector('.btn-secondary');
+        const subscribeBtn = document.querySelector('.btn-primary');
+
+    // Function to open the modal
+        function openModal()
+        {
+            modal.classList.remove('hidden');
+            overlay.classList.remove('hidden');
+        }
+    // Function to close the modal
+        function closeModal()
+        {
+            modal.classList.add('hidden');
+            overlay.classList.add('hidden');
+        }
+        subscribeBtn.addEventListener("click", function()
+        {
+            alert("Thank you for subscribing!");
+        });
+    // Add event listeners to open and close the modal
+        openModalBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+        cancelModalBtn.addEventListener('click', closeModal);
+</script>
+</body>
+</html>
+
+
+
+
+<!-- ● Use external js library to show slider -->
+<!-- Use external js library to show slider-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- External css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- external js -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style>
+        body
+        {
+            overflow-x: hidden;
+            box-sizing: border-box;
+            background-color: gray;
+        }
+        img
+        {
+            width: 90%;
+            height: 400px;
+            margin: 3%;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container"> 
+        <div class="slide">
+            <img src="https://img.freepik.com/premium-photo/dark-blue-color-background-seamless-square-texture-tile-ready-high-quality-texture-extremely-high-resolution_463999-1466.jpg">
+        </div> 
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTALoWqrY6-8uROe9SuWPGYg14UCA1sFPfOAA&s">
+        </div> 
+        <div class="slide">
+            <img src="https://freesvg.org/img/1286146809.png">
+        </div> 
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRynxC66egLoqGOl6N87Hr6dh1FbBjteUi9aA&s">
+        </div> 
+        <div class="slide">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4HVktzJMZewKL0HuBZj9j_295KmeSCCMZdg&s">
+        </div> 
+        <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Solid_lavender.svg/1200px-Solid_lavender.svg.png">
+        </div>
+        <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Sky_blue_square.jpg">
+        </div>
+        <div class="slide">
+            <img src="https://img.freepik.com/premium-photo/orange-paper-texture-background-clean-square-wallpaper_118047-8064.jpg">
+        </div>
+    </div>
+
+    <script>
+        $('.carousel-container').slick({
+            autoplay: true,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            speed: 350,
+        });
+    </script>
+</body>
+</html>
+
+
+
+<!-- ● Prevent the browser when i click the form submit button -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Prevent Form Submission</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        form
+        {
+            width: 50%;
+            margin-left: 40%;
+            border: 3px solid;
+            padding: 20px;
+        }
+        input
+        {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!-- Form -->
+    <form id="myForm">
+        <input type="text" name="inputField" placeholder="Enter something...">
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
+
+    <script>
+        // Get the form element
+            var form = document.getElementById("myForm");
+    
+        // Add event listener for form submission
+            form.addEventListener("submit", function(event)
+            {
+                    // Prevent the default form submission behavior
+                event.preventDefault();
+            });
+    </script>
+</body>
+</html>
