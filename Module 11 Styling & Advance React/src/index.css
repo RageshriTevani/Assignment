@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+/* Style the slider container */
+.glide {
+  position: relative;
+  width: 75%; /* Set the width of the slider */
+  height: 800px; /* Set the height of the slider */
+  overflow: hidden;
+  display: inline;
+}
+
+
+.main h4{
+  position: absolute;
+  z-index: 5;
+  margin-left: -110px;
+  margin-top: 150px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+/* twoimages */
+.twobtns .btn1{
+  color: white;
+  background-color: maroon;
+  width: 130px;
+  height: 22px;
+  padding: 2px;
+  border-radius: 10px;
+  box-shadow: none;
+  margin-left: 200px;
+  margin-top: -138px;
+  z-index: 5;
+  position: absolute;
+}
+.twobtns .btn1:hover{
+  background-color: maroon;
+  box-shadow: none !important;
+}
+
+.twobtns .btn2{
+  color: white;
+  background-color: maroon;
+  width: 130px;
+  height: 22px;
+  padding: 2px;
+  border-radius: 10px;
+  box-shadow: none;
+  margin-left: 800px;
+  margin-top: -138px;
+  z-index: 5;
+  position: absolute;
+}
+.twobtns .btn2:hover{
+  background-color: maroon;
+  box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
+
