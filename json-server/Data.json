@@ -1,0 +1,45 @@
+{
+    "Apparel Brands" : [
+        {
+            "Id":1,
+            "Brandname": "H & M",
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhl3RKJPps-y_d3Ygoho-R8yJdFXxK27jmiQ&s" ,
+            "Description": "H&M Group is a global fashion and design company, with over 4,000 stores in more than 75 markets and online sales in 60 markets. All our brands and business ventures share the same passion for making great and more sustainable fashion and design available to everyone.",
+            "Country of Origin": "Sweden"
+        },
+        {
+            "Id":2,
+            "Brandname": "Fabindia",
+            "Image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyFBLVWUEV8CH7YfPcB4Fz64uY2cIdu61Tsw&s" ,
+            "Description": "Fabindia sells a variety of products ranging from textiles, garments, stationery, furniture, home accessories, ceramics, organic foods, and bodycare products, besides exporting home furnishings.",
+            "Country of Origin": "India"
+        },
+        {
+            "Id":3,
+            "Brandname": "Levis",
+            "Image": "https://example.com/image1.jpg" ,
+            "Description": "Levi Strauss & Co., world's largest maker of pants, noted especially for its blue denim jeans called Levi's (registered trademark). Its other products include tailored slacks, jackets, hats, shirts, skirts, and belts, and it licenses the manufacture of novelty items.",
+            "Country of Origin": "USA"
+        }
+    ],
+    "reviews":[
+        {
+            "id":1,
+            "Brandname":"H & M",
+            "description":"Best",
+            "Rating": 4.7
+        },
+        {
+            "id":2,
+            "Brandname":"Fabindia",
+            "description":"Extremely good",
+            "Rating": 4.9
+        },
+        {
+            "id":2,
+            "Brandname":"Levis",
+            "description":"Good",
+            "Rating": 4.5
+        }
+    ]
+}
