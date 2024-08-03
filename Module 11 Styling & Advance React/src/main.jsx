@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Layout from './Layout.jsx'
+import Map from './Map.jsx'
+import Login from './Login_account.jsx'
 import NewArrivals from './NewArrivals.jsx'
 import Women from './Women.jsx'
 import Men from './Men.jsx'
@@ -12,7 +14,7 @@ import Food from './Food.jsx'
 import Collection from './Collection.jsx'
 import Services from './Services.jsx'
 import Fabfamily from './FabFamily.jsx'
-import Sales from './Sales.jsx'
+import Sale from './Sale.jsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
@@ -24,6 +26,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <Router>
     <Routes>
     <Route path="/" element={<Layout />} />
+    <Route path="/map" element={<Map />} />    
+    <Route path="/login" element={<Login />} />    
     <Route path="/newarrivals" element={<NewArrivals />} />
     <Route path="/women" element={<Women />} /> 
     <Route path="/men" element={<Men />} />
@@ -35,7 +39,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Route path="/collection" element={<Collection />} />
     <Route path="/services" element={<Services />} />
     <Route path="/fabfamily" element={<Fabfamily />} />
-    <Route path="/sales" element={<Sales />} />
+    <Route path="/sale" element={<Sale />} />
     </Routes>
   </Router>
   
